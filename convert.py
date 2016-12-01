@@ -1,5 +1,5 @@
 """
-Python 3 script template (changeme)
+convert CSV to pleiades batch json
 """
 
 import argparse
@@ -68,6 +68,12 @@ if __name__ == "__main__":
                 p[0],
                 p[1],
                 **d)
+        parser.add_argument('source', type=str,
+                            help='CSV file to read and convert')
+        parser.add_argument('crosswalk', type=str,
+                            help='crosswalk file to use in conversion')
+        parser.add_argument('destination', type=str,
+                            help='filepath to which to write the JSON result')
         # example positional argument
         # parser.add_argument(
         #     'foo',
