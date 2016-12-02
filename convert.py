@@ -5,7 +5,9 @@ convert CSV to pleiades batch json
 import argparse
 from functools import wraps
 import inspect
+import json
 import logging
+from mycsv2json import Crosswalker as CW
 import os
 import re
 import sys
@@ -19,6 +21,7 @@ POSITIONAL_ARGUMENTS = [
     ['-v', '--verbose', False, 'verbose output (logging level == INFO)'],
     ['-w', '--veryverbose', False,
         'very verbose output (logging level == DEBUG)'],
+    ['-x', '--overwrite', False, 'overwrite existing output']
 ]
 
 
@@ -40,7 +43,15 @@ def main(args):
     main function
     """
     # logger = logging.getLogger(sys._getframe().f_code.co_name)
-    pass
+    src = args.source
+    xwalk = args.crosswalk
+    dest = args.destination
+    cw = CW(src, xwalk, overwrite=args.overwrite)
+    result = cw.convert(generate_id=True)
+    print('got {} objects'.format(
+        len(result.keys())))
+    json.dump(result, open(dest, 'w'), indent=4, ensure_ascii=False,
+              sort_keys=True)
 
 
 if __name__ == "__main__":
