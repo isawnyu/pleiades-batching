@@ -4,59 +4,66 @@
   },
   "Pleiades place": {
     "how": "copy",
-    "key": ""
-  },
-  "#": {
-    "how": "primary_key"
-  },
-  "C.L.": {
-    "how": "copy",
-    "key": "credit_line",
+    "key": "pid",
     "cleanup": ["whitespace"]
   },
-  "Context": {
+  "Name": {
     "how": "copy",
-    "key": "context",
+    "key": "attested",
     "cleanup": ["whitespace"]
   },
-  "Date": {
+  "Transliteration": {
     "how": "copy",
-    "key": "date",
+    "key": "transliterated",
     "cleanup": ["whitespace"]
   },
-  "Dimensions": {
+  "Language": {
     "how": "copy",
-    "key": "dimensions",
+    "key": "language",
     "cleanup": ["whitespace"]
   },
-  "Inv. No.": {
+  "source citation": {
     "how": "copy",
-    "key": "inventory_num",
+    "key": "ref1",
     "cleanup": ["whitespace"]
   },
-  "Lender": {
+  "source link": {
     "how": "copy",
-    "key": "lender",
+    "key": "ref1url",
     "cleanup": ["whitespace"]
   },
-  "Medium": {
+  "source citation 2": {
     "how": "copy",
-    "key": "medium",
+    "key": "ref2",
     "cleanup": ["whitespace"]
   },
-  "Notes": {
+  "source link 2": {
     "how": "copy",
-    "key": "notes"
+    "key": "ref2url",
+    "cleanup": ["whitespace"]
   },
-  "Subtheme": {
+  "source citation 3": {
+    "how": "copy",
+    "key": "ref3",
+    "cleanup": ["whitespace"]
+  },
+  "source link 3": {
+    "how": "copy",
+    "key": "ref3url",
+    "cleanup": ["whitespace"]
+  },
+  "date attested": {
+    "how": "copysplit",
+    "delimiter": ",",
+    "key": "periods",
+    "cleanup": ["whitespace", "lowercase"]
+  },
+  "details": {
+    "how": "copy",
+    "key": "details",
+    "cleanup": ["whitespace"]
+  },
+  "creators": {
     "how": "suppress"
-  },
-  "Theme": {
-    "how": "suppress"
-  },
-  "Title": {
-    "how": "copy",
-    "key": "title",
-    "cleanup": ["whitespace"]
   }
 }

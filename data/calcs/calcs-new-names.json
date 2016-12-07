@@ -1,0 +1,1569 @@
+{
+    "object-0": {
+        "attested": "جنوة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "383664",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Ginua"
+    },
+    "object-1": {
+        "attested": "جربة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "344383",
+        "ref1": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref1url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f200",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Girba"
+    },
+    "object-130": {
+        "attested": "Bard̲j̲alūna",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "246343",
+        "ref1": "Encyclopedia of Islam, Bars̲h̲alūna",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_1244",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-14": {
+        "attested": "ريو",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "452416",
+        "ref1": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref1url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f409",
+        "ref2": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Riu"
+    },
+    "object-155": {
+        "attested": "قاشان",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "890432541",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Qashan"
+    },
+    "object-158": {
+        "attested": "انكوذه",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "462199",
+        "ref1": "Rapoport and Savage-Smith 2014 (Google Books), 453",
+        "ref1url": "https://books.google.co.uk/books?id=ERJMAgAAQBAJ&lpg=PA453&dq=%D8%A7%D8%B1%D9%83%D9%88%D8%B0%D8%A9&pg=PA453#v=onepage&q&f=false",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Ankudah"
+    },
+    "object-161": {
+        "attested": "Bars̲h̲inūna",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "246343",
+        "ref1": "Encyclopedia of Islam, Bars̲h̲alūna",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_1244",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-163": {
+        "attested": "مالقة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "265963",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref2url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f345",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Malaqa"
+    },
+    "object-167": {
+        "attested": " بحر نيطش",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "1224",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Bachr Nitsh"
+    },
+    "object-168": {
+        "attested": "تبريز",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "430344981",
+        "ref1": "Wikipedia (Arabic), تبريز",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A8%D8%B1%D9%8A%D8%B2",
+        "ref2": "The Muqaddimah, Second Prefactory Discussion",
+        "ref2url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Tabriz"
+    },
+    "object-184": {
+        "attested": "بذرنت",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "442509",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Badhrant"
+    },
+    "object-211": {
+        "attested": "Arbūna",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "246347",
+        "ref1": "Encyclopedia of Islam, Arbūna",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_0707",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-218": {
+        "attested": "خريدة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "246406",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Khrida"
+    },
+    "object-224": {
+        "attested": "طلوشة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "246694",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Tulusha"
+    },
+    "object-230": {
+        "attested": "Was̲h̲ḳa",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "246539",
+        "ref1": "Encyclopedia of Islam, Was̲h̲ḳa",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_7879",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-233": {
+        "attested": "Bars̲h̲alūna",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "246343",
+        "ref1": "Encyclopedia of Islam, Bars̲h̲alūna",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_1244",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-239": {
+        "attested": "سلمنكة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "236642",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B1%D9%85%D9%8A%D9%86%D9%8A%D8%A7",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Salamanka"
+    },
+    "object-24": {
+        "attested": "قرشقة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "472063",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Qurshiqa"
+    },
+    "object-241": {
+        "attested": "أربونة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "246347",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), أربونة",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B1%D8%A8%D9%88%D9%86%D8%A9",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Arbuna"
+    },
+    "object-244": {
+        "attested": "طارسوس",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "648789",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "Wikipedia (Arabic), طرسوس",
+        "ref3url": "https://ar.wikipedia.org/wiki/%D8%B7%D8%B1%D8%B3%D9%88%D8%B3",
+        "transliterated": "Tarsus"
+    },
+    "object-260": {
+        "attested": "قرقشونة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "246294",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), قرقشونة",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D8%B4%D9%88%D9%86%D8%A9",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Qarqashuna"
+    },
+    "object-296": {
+        "attested": "درياي خزر",
+        "details": "",
+        "language": "fa",
+        "periods": [
+            ""
+        ],
+        "pid": "884130",
+        "ref1": "Ouseley 1800, 8",
+        "ref1url": "https://archive.org/stream/orientalgeograp00agoog#page/n58/mode/1up",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Dryai Khazr"
+    },
+    "object-299": {
+        "attested": "نهر ديالى",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "modern"
+        ],
+        "pid": "583407059",
+        "ref1": "Wikipedia (Arabic), نهر_ديالى",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D9%86%D9%87%D8%B1_%D8%AF%D9%8A%D8%A7%D9%84%D9%89",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Nahr Dyala"
+    },
+    "object-303": {
+        "attested": "قطرونة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "452317",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref2url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f499",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Qutruna"
+    },
+    "object-31": {
+        "attested": "سرت",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "363959",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 59",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Surt"
+    },
+    "object-313": {
+        "attested": "قرطب",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "256128",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Qurtuba"
+    },
+    "object-32": {
+        "attested": "Armīniya",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "874350",
+        "ref1": "Encyclopedia of Islam, Armīniya",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_COM_0064",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-339": {
+        "attested": "الفرما",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "727192",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "Wikipedia (Arabic), الفرما",
+        "ref3url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%81%D8%B1%D9%85%D8%A7",
+        "transliterated": "Al-Farama"
+    },
+    "object-354": {
+        "attested": "بدليس",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "874438",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Bidlis"
+    },
+    "object-356": {
+        "attested": "شقونية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "236658",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Shiquniya"
+    },
+    "object-357": {
+        "attested": "سميساط",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "658587",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Samisat"
+    },
+    "object-403": {
+        "attested": "S̲h̲alamantiḳa",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "236642",
+        "ref1": "Encyclopedia of Islam, S̲h̲alamanḳa",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_6793",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-415": {
+        "attested": "Baḥr Adriyās",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "1004",
+        "ref1": "Encyclopedia of Islam, Baḥr Adriyās",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_1055",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-418": {
+        "attested": "جزيرة ردوس",
+        "details": "literal translation: Island of Rudus",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "590031",
+        "ref1": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref1url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f419",
+        "ref2": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Giazira Rudus"
+    },
+    "object-422": {
+        "attested": "جزيرة دنديموا",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "462186",
+        "ref1": "Book of Curiosities (Bodleian), Map of the Mediterranean",
+        "ref1url": "http://cosmos.bodley.ox.ac.uk/hms/home.php",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Giazira Dundimu"
+    },
+    "object-440": {
+        "attested": "بنبلونة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "246567",
+        "ref1": "Wikipedia (Arabic), بنبلونة",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%86%D8%A8%D9%84%D9%88%D9%86%D8%A9",
+        "ref2": "The Muqaddimah, Second Prefactory Discussion",
+        "ref2url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Banbluna"
+    },
+    "object-464": {
+        "attested": "الحيرة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "912800",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), الحيرة",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D9%8A%D8%B1%D8%A9",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Al-Chira"
+    },
+    "object-469": {
+        "attested": "كاشان",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "modern"
+        ],
+        "pid": "890432541",
+        "ref1": "Wikipedia (Arabic), كاشان",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%B4%D8%A7%D9%86",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Kashan"
+    },
+    "object-473": {
+        "attested": "بغداد",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "893952",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), بغداد",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Baghdad"
+    },
+    "object-48": {
+        "attested": "مصيصة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "658538",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Kitab Futuh Al-buldan (Google Books), 255",
+        "ref2url": "https://books.google.co.uk/books?id=bcWtttJL3WEC&lpg=PA255&ots=88EQxqGAfb&dq=massisah&pg=PA255#v=onepage&q&f=false",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Masisa"
+    },
+    "object-482": {
+        "attested": "و شقة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "246539",
+        "ref1": "Wikipedia (Arabic), وشقة",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D9%88%D8%B4%D9%82%D8%A9",
+        "ref2": "The Muqaddimah, Second Prefactory Discussion",
+        "ref2url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Uishqa"
+    },
+    "object-488": {
+        "attested": "ملف",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "432670",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref2url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f486",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Malf"
+    },
+    "object-493": {
+        "attested": "نهر سيحان",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "648748",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Nahr Saichan"
+    },
+    "object-50": {
+        "attested": "نهر دجلة",
+        "details": "Literal translation: River Digla",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "912964",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Nahr Digla"
+    },
+    "object-529": {
+        "attested": "البحر الأدرياتيكي",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "modern"
+        ],
+        "pid": "1004",
+        "ref1": "Wikipedia (Arabic), البحر_الأدرياتيكي",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A8%D8%AD%D8%B1_%D8%A7%D9%84%D8%A3%D8%AF%D8%B1%D9%8A%D8%A7%D8%AA%D9%8A%D9%83%D9%8A",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Al-bachr al-Adryatiki"
+    },
+    "object-53": {
+        "attested": "درياي فارس",
+        "details": "",
+        "language": "fa",
+        "periods": [
+            ""
+        ],
+        "pid": "29713",
+        "ref1": "Ouseley 1800, 8",
+        "ref1url": "https://archive.org/stream/orientalgeograp00agoog#page/n62/mode/1up",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Dryai Fars"
+    },
+    "object-538": {
+        "attested": "خليج البنادقة",
+        "details": "Literal translation: Venetian Gulf",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "1004",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Khalig al-bunadiqa"
+    },
+    "object-549": {
+        "attested": "برشلونة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "246343",
+        "ref1": "Wikipedia (Arabic), برشلونة",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D8%B4%D9%84%D9%88%D9%86%D8%A9",
+        "ref2": "The Muqaddimah, Second Prefactory Discussion",
+        "ref2url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-55": {
+        "attested": " بلاد الأرمن",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "874350",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Bilad al-Armin"
+    },
+    "object-554": {
+        "attested": "نهر الفرات",
+        "details": "Literal translation: River al-Frat",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "912849",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Nahr al-Frat"
+    },
+    "object-57": {
+        "attested": "تولوز",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "246694",
+        "ref1": "Wikipedia (Arabic), تولوز",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D9%84%D9%88%D8%B2",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Tuluz"
+    },
+    "object-583": {
+        "attested": "ادرنت",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "442615",
+        "ref1": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref1url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f409",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Adrant"
+    },
+    "object-584": {
+        "attested": "جرندة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "246406",
+        "ref1": "Wikipedia (Arabic), جرندة",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%AC%D8%B1%D9%86%D8%AF%D8%A9",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Girinda"
+    },
+    "object-586": {
+        "attested": "كرمان",
+        "details": "",
+        "language": "fa",
+        "periods": [
+            "modern"
+        ],
+        "pid": "29802",
+        "ref1": "Ouseley 1800, 12",
+        "ref1url": "https://archive.org/stream/orientalgeograp00agoog#page/n62/mode/1up",
+        "ref2": "Wikipedia (Farsi), استان_کرمان",
+        "ref2url": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86_%DA%A9%D8%B1%D9%85%D8%A7%D9%86",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Kirman"
+    },
+    "object-6": {
+        "attested": "جزيرة ركونية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "462199",
+        "ref1": "Book of Curiosities (Bodleian), Map of the Mediterranean",
+        "ref1url": "http://cosmos.bodley.ox.ac.uk/hms/home.php",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Giazira Rikuniya"
+    },
+    "object-610": {
+        "attested": "عين زربة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "658378",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "Wikipedia (Arabic), عين_زربة",
+        "ref3url": "https://ar.wikipedia.org/wiki/%D8%B9%D9%8A%D9%86_%D8%B2%D8%B1%D8%A8%D8%A9",
+        "transliterated": "Ain Zarba"
+    },
+    "object-628": {
+        "attested": "الرها",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "491585",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Ar-Raha"
+    },
+    "object-632": {
+        "attested": "نبل",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "433014",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref2url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f486",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Nabal"
+    },
+    "object-663": {
+        "attested": " القادسية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "894082",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), محافظة_القادسية",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9_%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%B3%D9%8A%D8%A9",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Al-Qadisiya"
+    },
+    "object-668": {
+        "attested": "Burusa",
+        "details": "",
+        "language": "tr",
+        "periods": [
+            "modern"
+        ],
+        "pid": "511384",
+        "ref1": "Encyclopedia of Islam, Bursa",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_1552",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-671": {
+        "attested": "بحر قزوين",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "modern"
+        ],
+        "pid": "884130",
+        "ref1": "Wikipedia (Arabic), بحر_قزوين",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%A8%D8%AD%D8%B1_%D9%82%D8%B2%D9%88%D9%8A%D9%86",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Bachr Qazuin"
+    },
+    "object-688": {
+        "attested": "بحر الخزر",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "884130",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Bachr al-Khazar"
+    },
+    "object-692": {
+        "attested": "شقوبية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "modern"
+        ],
+        "pid": "236658",
+        "ref1": "Wikipedia (Arabic), شقوبية",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%B4%D9%82%D9%88%D8%A8%D9%8A%D8%A9",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Shiqubiya"
+    },
+    "object-709": {
+        "attested": "سمورة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "236577",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), سمورة",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D8%B3%D9%85%D9%88%D8%B1%D8%A9",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Samura"
+    },
+    "object-710": {
+        "attested": "بيروت",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "678060",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Bayrut"
+    },
+    "object-714": {
+        "attested": "سلوقية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "677992",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Siluqiya"
+    },
+    "object-72": {
+        "attested": "نصيبين",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "874623",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Nisibisin"
+    },
+    "object-741": {
+        "attested": "اذرنت",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "442615",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Adhrant"
+    },
+    "object-751": {
+        "attested": "بيش",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "403253",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref2url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f486",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Bish"
+    },
+    "object-753": {
+        "attested": "آمد",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "874298",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Amid"
+    },
+    "object-755": {
+        "attested": "عمورية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "609302",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), عمورية",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D8%B9%D9%85%D9%88%D8%B1%D9%8A%D8%A9",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "amuriya"
+    },
+    "object-762": {
+        "attested": "S̲h̲aḳūbiya",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "236658",
+        "ref1": "Encyclopedia of Islam, S̲h̲aḳūbiya",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_6789",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-768": {
+        "attested": "اذنة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "648548",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Adhana"
+    },
+    "object-769": {
+        "attested": "الموصل",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "874609",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), الموصل",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D9%88%D8%B5%D9%84",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Al-Musul"
+    },
+    "object-780": {
+        "attested": "انطكية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "638778",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 59",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Antakiya"
+    },
+    "object-781": {
+        "attested": "اسفاقس",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "324822",
+        "ref1": "Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref2url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f200",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Asfaqs"
+    },
+    "object-782": {
+        "attested": "تكريت",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "894099",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), تكريت",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%83%D8%B1%D9%8A%D8%AA",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Tikrit"
+    },
+    "object-789": {
+        "attested": "سالامانكا",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "modern"
+        ],
+        "pid": "236642",
+        "ref1": "Wikipedia (Arabic), سالامانكا",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A7%D9%84%D8%A7%D9%85%D8%A7%D9%86%D9%83%D8%A7_(%D8%A5%D8%B3%D8%A8%D8%A7%D9%86%D9%8A%D8%A7)",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Salamanka"
+    },
+    "object-79": {
+        "attested": "ملاطية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "629040",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Malatiya"
+    },
+    "object-795": {
+        "attested": "آبلة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "modern"
+        ],
+        "pid": "236361",
+        "ref1": "Wikipedia (Arabic), آبلة",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%A2%D8%A8%D9%84%D8%A9",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Abila"
+    },
+    "object-8": {
+        "attested": "جلولاء",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "583407059",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Galula"
+    },
+    "object-80": {
+        "attested": "أرمينيا",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "modern"
+        ],
+        "pid": "874350",
+        "ref1": "Wikipedia (Arabic), أرمينيا",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B1%D9%85%D9%8A%D9%86%D9%8A%D8%A7",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Arminia"
+    },
+    "object-819": {
+        "attested": "قالقلة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "874373",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Qaliqala"
+    },
+    "object-838": {
+        "attested": "امد",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "874298",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "Wikipedia (Arabic), آمد",
+        "ref3url": "https://ar.wikipedia.org/wiki/%D8%A2%D9%85%D8%AF",
+        "transliterated": "Amid"
+    },
+    "object-842": {
+        "attested": "بورصة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "511384",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), بورصة",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D8%B1%D8%B5%D8%A9_(%D9%85%D8%AF%D9%8A%D9%86%D8%A9)",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Bursa"
+    },
+    "object-846": {
+        "attested": "الرقة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "668318",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), الرقة",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B1%D9%82%D8%A9",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Ar-Raqa"
+    },
+    "object-859": {
+        "attested": "لنبدوشة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "1094",
+        "ref1": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref1url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f200",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Lanbedusha"
+    },
+    "object-86": {
+        "attested": "اركوذة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "462199",
+        "ref1": "Rapoport and Savage-Smith 2014 (Google Books), 453",
+        "ref1url": "https://books.google.co.uk/books?id=ERJMAgAAQBAJ&lpg=PA453&dq=%D8%A7%D8%B1%D9%83%D9%88%D8%B0%D8%A9&pg=PA453#v=onepage&q&f=false",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Arkudha"
+    },
+    "object-867": {
+        "attested": "Kās̲h̲ān",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "890432541",
+        "ref1": "Encyclopedia of Islam, Kās̲h̲ān",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_3963",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-878": {
+        "attested": "اضنة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "modern"
+        ],
+        "pid": "648548",
+        "ref1": "Wikipedia (Arabic), أضنة",
+        "ref1url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B6%D9%86%D8%A9",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Adhana"
+    },
+    "object-88": {
+        "attested": "دمياط",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "727235",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "Wikipedia (Arabic), دمياط",
+        "ref3url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%85%D9%8A%D8%A7%D8%B7",
+        "transliterated": "Damiat"
+    },
+    "object-889": {
+        "attested": "نقمودية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "511337",
+        "ref1": "Ibn Hauqal, Book of the Description of the Earth, (Istanbul, Topakapi Sarayi, ms. 6527)",
+        "ref1url": "",
+        "ref2": "Configuration de la Terre 1964, 188",
+        "ref2url": "http://www.worldcat.org/title/configuration-de-la-terre-kitab-surat-al-ard/oclc/3332947",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Niqumudiya"
+    },
+    "object-897": {
+        "attested": "S̲h̲alamanḳa",
+        "details": "",
+        "language": "ar-Latn",
+        "periods": [
+            "modern"
+        ],
+        "pid": "236642",
+        "ref1": "Encyclopedia of Islam,S̲h̲alamanḳa",
+        "ref1url": "http://dx.doi.org/10.1163/1573-3912_islam_SIM_6793",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": ""
+    },
+    "object-906": {
+        "attested": "أيلة",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "236361",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Aila"
+    },
+    "object-963": {
+        "attested": "الرافضة ",
+        "details": "According to Wikiepdia, \"Between 771 and 772, the Abbasid caliph al-Mansur built a garrison city about 200 metres to the west of al-Raqqah for a detachment of his Khorasanian Persian army. It was named al-Rāfiqah, \"the companion\". The strength of the Abbasid imperial military is still visible in the impressive city wall of al-Rāfiqah. Al-Raqqah and al-Rāfiqah merged into one urban complex, together larger than the former Umayyad capital Damascus.\" They are still recorded as separate entities in the Muqaddimah ",
+        "language": "ar",
+        "periods": [
+            ""
+        ],
+        "pid": "668318",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia, Al Raqqah",
+        "ref2url": "https://en.wikipedia.org/wiki/Al-Raqqah",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Ar-Rafidha"
+    },
+    "object-976": {
+        "attested": "قم",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine",
+            "modern"
+        ],
+        "pid": "903036",
+        "ref1": "The Muqaddimah, Second Prefactory Discussion",
+        "ref1url": "http://www.muslimphilosophy.com/ik/Muqaddimah/Chapter1/Ch_1_02.htm",
+        "ref2": "Wikipedia (Arabic), قم",
+        "ref2url": "https://ar.wikipedia.org/wiki/%D9%82%D9%85",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Qum"
+    },
+    "object-991": {
+        "attested": "سرقسطية",
+        "details": "",
+        "language": "ar",
+        "periods": [
+            "mediaeval/byzantine"
+        ],
+        "pid": "246344",
+        "ref1": "al-Idrisi (Bibliothèque Nationale de France)",
+        "ref1url": "http://gallica.bnf.fr/ark:/12148/btv1b6000547t/f345",
+        "ref2": "",
+        "ref2url": "",
+        "ref3": "",
+        "ref3url": "",
+        "transliterated": "Saraqustiya"
+    }
+}
