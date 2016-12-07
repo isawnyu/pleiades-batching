@@ -1,0 +1,47 @@
+{
+  "Place_name":  {
+    "how": "copy",
+    "key": "title",
+    "cleanup": ["whitespace"]
+  },
+  "place_name_language": {
+    "how": "copy",
+    "key": "language",
+    "cleanup": ["whitespace"]
+  },
+  "Region": {
+    "how": "copy",
+    "key": "region",
+    "cleanup": ["whitespace"]
+  },
+  "TIR": {
+    "how": "copy",
+    "key": "place_reference",
+    "prefix": "TIR ",
+    "cleanup": ["whitespace"]
+  },
+  "coord_lat": {
+    "how": "copy",
+    "key": "latitude",
+    "cleanup": ["whitespace"]
+  },
+  "coord_long": {
+    "how": "copy",
+    "key": "longitude",
+    "cleanup": ["whitespace"]
+  },
+  "coordinate origins": {
+    "how": "copy",
+    "key": "location_reference",
+    "cleanup": ["whitespace"]
+  },
+  "PleiadesID": {
+    "how": "suppress"
+  },
+  "Other Name":  {
+    "how": "suppress"
+  },
+  "Era": {
+    "how": "suppress"
+  }
+}

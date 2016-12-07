@@ -1,0 +1,117 @@
+{
+    "object-0": {
+        "language": "Hebrew",
+        "parent_title": "Ajjur",
+        "title": "Agur"
+    },
+    "object-111": {
+        "language": "Arabic",
+        "parent_title": "Er Ram",
+        "title": "Ar Ram wa Dahiyat al Barid"
+    },
+    "object-28": {
+        "language": "Arabic",
+        "parent_title": "Ein Semsem",
+        "title": "Ayn as Simsim"
+    },
+    "object-298": {
+        "language": "Hebrew",
+        "parent_title": "Elusa",
+        "title": "Haluza"
+    },
+    "object-319": {
+        "language": "Hebrew",
+        "parent_title": "Rehovot in the Negev",
+        "title": "Horbat Rehovot"
+    },
+    "object-337": {
+        "language": "Hebrew",
+        "parent_title": "Er Ram",
+        "title": "Rama"
+    },
+    "object-350": {
+        "language": "Arabic",
+        "parent_title": "En Avdat",
+        "title": "`Ein el Mureifij"
+    },
+    "object-36": {
+        "language": "Arabic",
+        "parent_title": "Umm ed-Dananir",
+        "title": "Umm Abū ad Danānīr"
+    },
+    "object-444": {
+        "language": "Arabic",
+        "parent_title": "Valley of Elah",
+        "title": "Wadi es-Sunt"
+    },
+    "object-453": {
+        "language": "Arabic",
+        "parent_title": "Rehovot in the Negev",
+        "title": "Er Ruheibe"
+    },
+    "object-609": {
+        "language": "Hebrew",
+        "parent_title": "Huqoq",
+        "title": "Horvat Huqoq"
+    },
+    "object-665": {
+        "language": "Arabic",
+        "parent_title": "Rujm Zaki",
+        "title": "Ard Zaki"
+    },
+    "object-708": {
+        "language": "Arabic",
+        "parent_title": "Hammatha",
+        "title": "el Hamme"
+    },
+    "object-711": {
+        "language": "Arabic",
+        "parent_title": "Dabiyye",
+        "title": "Dabiyah"
+    },
+    "object-788": {
+        "language": "Hebrew",
+        "parent_title": "Wadi Ibtah",
+        "title": "Nahal Evtah"
+    },
+    "object-816": {
+        "language": "Arabic",
+        "parent_title": "Rehovot in the Negev",
+        "title": "El Raheiba"
+    },
+    "object-833": {
+        "language": "Arabic",
+        "parent_title": "Rujm Zaki",
+        "title": "Tell ez Zakiye"
+    },
+    "object-916": {
+        "language": "Arabic",
+        "parent_title": "Beit Yerah",
+        "title": "Khirbet al-Karak"
+    },
+    "object-933": {
+        "language": "Arabic",
+        "parent_title": "Elusa",
+        "title": "Al-Khalasa"
+    },
+    "object-949": {
+        "language": "Hebrew",
+        "parent_title": "Capernaum",
+        "title": "Kfar Nahum"
+    },
+    "object-950": {
+        "language": "Hebrew",
+        "parent_title": "Hammatha",
+        "title": "Hammat Gader"
+    },
+    "object-979": {
+        "language": "Arabic",
+        "parent_title": "Huqoq",
+        "title": "Yaquq"
+    },
+    "object-991": {
+        "language": "Hebrew",
+        "parent_title": "Ein Nashot",
+        "title": "Horvat Ein Nashut"
+    }
+}

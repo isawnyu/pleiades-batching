@@ -1,0 +1,20 @@
+{
+  "Place Name":  {
+    "how": "copy",
+    "key": "parent_title",
+    "cleanup": ["whitespace"]
+  },
+  "Language": {
+    "how": "copy",
+    "key": "language",
+    "cleanup": ["whitespace"]
+  },
+  "Alternate name": {
+    "how": "copy",
+    "key": "title",
+    "cleanup": ["whitespace"]
+  },
+  "Era": {
+    "how": "suppress"
+  }
+}

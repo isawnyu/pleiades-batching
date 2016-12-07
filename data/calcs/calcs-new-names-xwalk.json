@@ -1,0 +1,62 @@
+{
+  "label": {
+    "how": "suppress"
+  },
+  "Pleiades place": {
+    "how": "copy",
+    "key": ""
+  },
+  "#": {
+    "how": "primary_key"
+  },
+  "C.L.": {
+    "how": "copy",
+    "key": "credit_line",
+    "cleanup": ["whitespace"]
+  },
+  "Context": {
+    "how": "copy",
+    "key": "context",
+    "cleanup": ["whitespace"]
+  },
+  "Date": {
+    "how": "copy",
+    "key": "date",
+    "cleanup": ["whitespace"]
+  },
+  "Dimensions": {
+    "how": "copy",
+    "key": "dimensions",
+    "cleanup": ["whitespace"]
+  },
+  "Inv. No.": {
+    "how": "copy",
+    "key": "inventory_num",
+    "cleanup": ["whitespace"]
+  },
+  "Lender": {
+    "how": "copy",
+    "key": "lender",
+    "cleanup": ["whitespace"]
+  },
+  "Medium": {
+    "how": "copy",
+    "key": "medium",
+    "cleanup": ["whitespace"]
+  },
+  "Notes": {
+    "how": "copy",
+    "key": "notes"
+  },
+  "Subtheme": {
+    "how": "suppress"
+  },
+  "Theme": {
+    "how": "suppress"
+  },
+  "Title": {
+    "how": "copy",
+    "key": "title",
+    "cleanup": ["whitespace"]
+  }
+}

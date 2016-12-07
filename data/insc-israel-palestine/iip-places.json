@@ -1,0 +1,533 @@
+{
+    "object-0": {
+        "language": "Arabic",
+        "latitude": "31.6911",
+        "location_reference": "GeoHack",
+        "longitude": "34.9239",
+        "place_reference": "TIR",
+        "region": "Judaea",
+        "title": "Ajjur"
+    },
+    "object-114": {
+        "language": "",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 2315-2718",
+        "region": "Golan",
+        "title": "Tel 'Akasha"
+    },
+    "object-151": {
+        "language": "",
+        "latitude": "31° 28' 39'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 8' 27'' E",
+        "place_reference": "TIR",
+        "region": "Judaea",
+        "title": "Kh. Zif"
+    },
+    "object-175": {
+        "language": "Arabic",
+        "latitude": "33° 0' 29'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 43' 44'' E",
+        "place_reference": "TIR 218268",
+        "region": "Golan",
+        "title": "Dabiyye"
+    },
+    "object-18": {
+        "language": "",
+        "latitude": "32.881111",
+        "location_reference": "GeoHack",
+        "longitude": "35.575",
+        "place_reference": "TIR 204254",
+        "region": "Galilee",
+        "title": "Capernaum"
+    },
+    "object-195": {
+        "language": "Arabic",
+        "latitude": "32° 48' 40'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 49' 5'' E",
+        "place_reference": "TIR 227246",
+        "region": "Golan",
+        "title": "Kafr El-Ma"
+    },
+    "object-213": {
+        "language": "Hebrew",
+        "latitude": "32° 53′ 5″ N",
+        "location_reference": "GeoHack",
+        "longitude": "35° 28′ 44″ E",
+        "place_reference": "TIR 195254",
+        "region": "Galilee",
+        "title": "Huqoq"
+    },
+    "object-227": {
+        "language": "Hebrew",
+        "latitude": "31° 57′ 14.4″ N",
+        "location_reference": "GeoNames",
+        "longitude": "34° 55′ 29.64″ E",
+        "place_reference": "TIR",
+        "region": "Coastal Plain",
+        "title": "Ben Shemen"
+    },
+    "object-232": {
+        "language": "Hebrew",
+        "latitude": "31°17'43.1\" N",
+        "location_reference": "GeoNames",
+        "longitude": "34°41'57.8\" E",
+        "place_reference": "TIR",
+        "region": "Negev",
+        "title": "Horvat Raqiq"
+    },
+    "object-281": {
+        "language": "Hebrew",
+        "latitude": "33.012934",
+        "location_reference": "Google Earth",
+        "longitude": "35.691436",
+        "place_reference": "TIR 2151-2687",
+        "region": "Golan",
+        "title": "Ein Nashot"
+    },
+    "object-325": {
+        "language": "",
+        "latitude": "31° 50' 0'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 15' 47'' E",
+        "place_reference": "TIR 175138",
+        "region": "Judaea",
+        "title": "Hizmeh"
+    },
+    "object-327": {
+        "language": "Arabic",
+        "latitude": "31° 50' 58'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 14' 3'' E",
+        "place_reference": "TIR 172140",
+        "region": "Judaea (?)",
+        "title": "Er-Ram"
+    },
+    "object-355": {
+        "language": "",
+        "latitude": "32° 40' 59'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 39' 55'' E",
+        "place_reference": "TIR 212232",
+        "region": "Galilee",
+        "title": "Hammatha"
+    },
+    "object-359": {
+        "language": "Arabic",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 2256-2696",
+        "region": "Golan",
+        "title": "Ramsaniyye"
+    },
+    "object-361": {
+        "language": "Arabic",
+        "latitude": "33.63",
+        "location_reference": "GeoHack; GeoNames",
+        "longitude": "35.78",
+        "place_reference": "TIR 2234-2662",
+        "region": "Golan",
+        "title": "El-Bireh"
+    },
+    "object-366": {
+        "language": "Hebrew",
+        "latitude": "32.7685",
+        "location_reference": "GeoHack",
+        "longitude": "35.5485",
+        "place_reference": "TIR 201241",
+        "region": "Galilee",
+        "title": "Hammath Tiberias"
+    },
+    "object-389": {
+        "language": "Arabic",
+        "latitude": "33° 14' 32'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 37' 29'' E",
+        "place_reference": "TIR",
+        "region": "Syria",
+        "title": "Jisr Ghajar"
+    },
+    "object-411": {
+        "language": "Arabic",
+        "latitude": "32° 57' 27'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 49' 57'' E",
+        "place_reference": "TIR 228262",
+        "region": "Golan",
+        "title": "Farj"
+    },
+    "object-422": {
+        "language": "Arabic",
+        "latitude": "32° 48' 10'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 44' 42'' E",
+        "place_reference": "TIR 220245",
+        "region": "Golan",
+        "title": "El-Al"
+    },
+    "object-444": {
+        "language": "",
+        "latitude": "276400",
+        "location_reference": "",
+        "longitude": "218900",
+        "place_reference": "TIR 2189-2764",
+        "region": "Golan",
+        "title": "Baidarus"
+    },
+    "object-450": {
+        "language": "Arabic",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 2310-2780",
+        "region": "Golan",
+        "title": "Tel el-Jukhadar"
+    },
+    "object-459": {
+        "language": "Arabic",
+        "latitude": "261500",
+        "location_reference": "",
+        "longitude": "232800",
+        "place_reference": "TIR 2328-2615",
+        "region": "Golan",
+        "title": "Butmiyye"
+    },
+    "object-517": {
+        "language": "Arabic",
+        "latitude": "31.7986",
+        "location_reference": "GeoHack",
+        "longitude": "35.2483",
+        "place_reference": "TIR 173134",
+        "region": "Judaea",
+        "title": "Isawiyya"
+    },
+    "object-532": {
+        "language": "English",
+        "latitude": "31° 1' 47'' N",
+        "location_reference": "GeoNames",
+        "longitude": "34° 33' 54'' E",
+        "place_reference": "TIR 108048",
+        "region": "Negev",
+        "title": "Rehovot in the Negev"
+    },
+    "object-533": {
+        "language": "",
+        "latitude": "33° 0' 5'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 38' 31'' E",
+        "place_reference": "TIR 209262",
+        "region": "Golan",
+        "title": "Rafid"
+    },
+    "object-59": {
+        "language": "Hebrew",
+        "latitude": "33° 1' 30'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 42' 8'' E",
+        "place_reference": "TIR 216270",
+        "region": "Golan",
+        "title": "Ein Semsem"
+    },
+    "object-600": {
+        "language": "Arabic",
+        "latitude": "32° 43' 2'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 40' 1'' E",
+        "place_reference": "TIR 2129-2360",
+        "region": "Golan",
+        "title": "El-'Uyun"
+    },
+    "object-606": {
+        "language": "Arabic",
+        "latitude": "33° 27′ 0″ N",
+        "location_reference": "GeoNames",
+        "longitude": "36° 15′ 0″ E",
+        "place_reference": "TIR",
+        "region": "Syria",
+        "title": "Dareya"
+    },
+    "object-616": {
+        "language": "Arabic",
+        "latitude": "32.326667",
+        "location_reference": "GeoHack",
+        "longitude": "36.369722",
+        "place_reference": "TIR 150222",
+        "region": "Jordan Valley",
+        "title": "Umm al-Jimal"
+    },
+    "object-636": {
+        "language": "Arabic",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 137193",
+        "region": "Coastal Plain",
+        "title": "Uhmm Khaled"
+    },
+    "object-64": {
+        "language": "Arabic",
+        "latitude": "32° 53' 12'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 44' 7'' E",
+        "place_reference": "TIR 2283-2555",
+        "region": "Golan",
+        "title": "Jurniyye"
+    },
+    "object-640": {
+        "language": "Arabic",
+        "latitude": "31° 44' 28'' N",
+        "location_reference": "GeoNames",
+        "longitude": "34° 35' 57'' E",
+        "place_reference": "TIR",
+        "region": "Coastal Plain",
+        "title": "Wadi Ibtah"
+    },
+    "object-649": {
+        "language": "Arabic",
+        "latitude": "32° 49' 31'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 38' 44'' E",
+        "place_reference": "TIR 211248",
+        "region": "Golan",
+        "title": "El-Kursi"
+    },
+    "object-659": {
+        "language": "Arabic",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 226267",
+        "region": "Golan",
+        "title": "Khushniyye"
+    },
+    "object-674": {
+        "language": "Arabic",
+        "latitude": "32° 56' 42'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 49' 11'' E",
+        "place_reference": "TIR",
+        "region": "Golan",
+        "title": "Umm ed-Dananir"
+    },
+    "object-703": {
+        "language": "Hebrew",
+        "latitude": "30° 49' 34'' N",
+        "location_reference": "GeoNames",
+        "longitude": "34° 45' 44'' E",
+        "place_reference": "TIR 127026",
+        "region": "Negev",
+        "title": "En Avdat"
+    },
+    "object-706": {
+        "language": "Hebrew",
+        "latitude": "31.565",
+        "location_reference": "",
+        "longitude": "35.1288",
+        "place_reference": "TIR 162107",
+        "region": "Judaea",
+        "title": "Bethennim"
+    },
+    "object-707": {
+        "language": "Hebrew",
+        "latitude": "32° 38' 46'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 11' 26'' E",
+        "place_reference": "TIR",
+        "region": "Golan",
+        "title": "Kefar Barukh"
+    },
+    "object-709": {
+        "language": "English",
+        "latitude": "31.6903",
+        "location_reference": "GeoHack",
+        "longitude": "34.9521",
+        "place_reference": "TIR",
+        "region": "Judaea",
+        "title": "Valley of Elah"
+    },
+    "object-725": {
+        "language": "",
+        "latitude": "32.1014",
+        "location_reference": "GeoHack",
+        "longitude": "34.7941",
+        "place_reference": "TIR 131167",
+        "region": "Coastal Plain",
+        "title": "Tel Qasile"
+    },
+    "object-729": {
+        "language": "Arabic",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 2279-2760",
+        "region": "Golan",
+        "title": "Mumsiyye"
+    },
+    "object-736": {
+        "language": "Hebrew",
+        "latitude": "32.717958",
+        "location_reference": "GeoHack",
+        "longitude": "35.571864",
+        "place_reference": "TIR",
+        "region": "Galilee",
+        "title": "Beit Yerah"
+    },
+    "object-741": {
+        "language": "Arabic",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 2223-2550",
+        "region": "Golan",
+        "title": "Rasm el-Khayakath"
+    },
+    "object-743": {
+        "language": "Hebrew",
+        "latitude": "32° 42' 58'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 7' 29'' E",
+        "place_reference": "TIR",
+        "region": "Galilee",
+        "title": "Qiryat Tiv'on"
+    },
+    "object-752": {
+        "language": "Hebrew",
+        "latitude": "31° 39' 45'' N",
+        "location_reference": "GeoNames",
+        "longitude": "34° 55' 57'' E",
+        "place_reference": "TIR 143118",
+        "region": "Judaea",
+        "title": "Givat Seled"
+    },
+    "object-757": {
+        "language": "Hebrew",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 140115",
+        "region": "Judaea",
+        "title": "Horvat Alim"
+    },
+    "object-770": {
+        "language": "",
+        "latitude": "31.097",
+        "location_reference": "GeoHack",
+        "longitude": "34.652",
+        "place_reference": "TIR 116056",
+        "region": "Negev",
+        "title": "Elusa"
+    },
+    "object-788": {
+        "language": "",
+        "latitude": "33° 1' 43'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 41' 19'' E",
+        "place_reference": "TIR 2147-2706",
+        "region": "Golan",
+        "title": "Narran"
+    },
+    "object-789": {
+        "language": "Arabic",
+        "latitude": "32° 45' 26'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 39' 35'' E",
+        "place_reference": "TIR 212240",
+        "region": "Golan",
+        "title": "Kafr Harib"
+    },
+    "object-797": {
+        "language": "Arabic",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 2252-2654",
+        "region": "Golan",
+        "title": "Tel et-Talaya"
+    },
+    "object-803": {
+        "language": "Hebrew",
+        "latitude": "31° 49' 54'' N",
+        "location_reference": "GeoNames",
+        "longitude": "34° 52' 56'' E",
+        "place_reference": "TIR 140136",
+        "region": "Judaea",
+        "title": "Huldah"
+    },
+    "object-817": {
+        "language": "Arabic",
+        "latitude": "32° 47' 40'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 43' 30'' E",
+        "place_reference": "TIR 216242",
+        "region": "Syria",
+        "title": "Fiq"
+    },
+    "object-830": {
+        "language": "Arabic",
+        "latitude": "",
+        "location_reference": "",
+        "longitude": "",
+        "place_reference": "TIR 2279-2638",
+        "region": "Galilee",
+        "title": "Fakhem"
+    },
+    "object-848": {
+        "language": "Arabic",
+        "latitude": "32° 48' 6'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 41' 16'' E",
+        "place_reference": "TIR 2147-2452",
+        "region": "Golan",
+        "title": "Squffiye"
+    },
+    "object-866": {
+        "language": "Arabic",
+        "latitude": "32° 48' 43'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 42' 54'' E",
+        "place_reference": "TIR 217246",
+        "region": "Golan",
+        "title": "Rujm Zaki"
+    },
+    "object-874": {
+        "language": "Hebrew",
+        "latitude": "31.3783",
+        "location_reference": "GeoHack",
+        "longitude": "34.8704",
+        "place_reference": "TIR",
+        "region": "Negev",
+        "title": "Kibbutz Lahav"
+    },
+    "object-89": {
+        "language": "Arabic",
+        "latitude": "31° 40' 1''",
+        "location_reference": "GeoNames",
+        "longitude": "35° 26' 54''",
+        "place_reference": "TIR 191120",
+        "region": "Judaea",
+        "title": "Wadi an-Nar"
+    },
+    "object-94": {
+        "language": "Arabic",
+        "latitude": "33° 10' 18'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 44' 0'' E",
+        "place_reference": "TIR 218286",
+        "region": "Golan",
+        "title": "Sukeik"
+    },
+    "object-99": {
+        "language": "Hebrew",
+        "latitude": "33° 5' 40'' N",
+        "location_reference": "GeoNames",
+        "longitude": "35° 41' 19'' E",
+        "place_reference": "TIR 214277",
+        "region": "Golan",
+        "title": "Hafar"
+    }
+}

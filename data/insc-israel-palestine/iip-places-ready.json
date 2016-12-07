@@ -1,0 +1,3303 @@
+{
+    "updates": [
+        {
+            "Place::/places/object-752": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Givat Seled"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Judaea, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 143118",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-532": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Rehovot in the Negev"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Negev, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 108048",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-703": {
+                "title": {
+                    "mode": "replace",
+                    "values": "En Avdat"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Negev, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 127026",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-227": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Ben Shemen"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Coastal Plain, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-640": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Wadi Ibtah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Coastal Plain, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-649": {
+                "title": {
+                    "mode": "replace",
+                    "values": "El-Kursi"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 211248",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-422": {
+                "title": {
+                    "mode": "replace",
+                    "values": "El-Al"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 220245",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-0": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Ajjur"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Judaea, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-709": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Valley of Elah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Judaea, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-517": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Isawiyya"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Judaea, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 173134",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-94": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Sukeik"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 218286",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-707": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Kefar Barukh"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-600": {
+                "title": {
+                    "mode": "replace",
+                    "values": "El-'Uyun"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 2129-2360",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-213": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Huqoq"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Galilee, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 195254",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-327": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Er-Ram"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Judaea (?), identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 172140",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-674": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Umm ed-Dananir"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-366": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Hammath Tiberias"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Galilee, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 201241",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-195": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Kafr El-Ma"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 227246",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-803": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Huldah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Judaea, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 140136",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-281": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Ein Nashot"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 2151-2687",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-64": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Jurniyye"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 2283-2555",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-389": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Jisr Ghajar"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Syria, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-736": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Beit Yerah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Galilee, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-99": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Hafar"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 214277",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-789": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Kafr Harib"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 212240",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-848": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Squffiye"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 2147-2452",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-411": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Farj"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 228262",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-743": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Qiryat Tiv'on"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Galilee, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-232": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Horvat Raqiq"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Negev, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-606": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Dareya"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Syria, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-616": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Umm al-Jimal"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Jordan Valley, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 150222",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-866": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Rujm Zaki"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 217246",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-817": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Fiq"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Syria, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 216242",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-175": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Dabiyye"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 218268",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-59": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Ein Semsem"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 216270",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-361": {
+                "title": {
+                    "mode": "replace",
+                    "values": "El-Bireh"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Golan, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR 2234-2662",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Place::/places/object-874": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Kibbutz Lahav"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Place in the Negev, identified as an epigraphic findspot by the Inscriptions of Israel/Palestine project."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "referenceCitations": {
+                    "mode": "replace",
+                    "values": [
+                        {
+                            "formatted_citation": "TIR",
+                            "type": "seeFurther"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "subordinates": [
+        {
+            "Location::/places/<Givat Seled>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.93250,31.66250]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Givat Seled>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Givat Seled"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Givat Seled"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Rehovot in the Negev>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.56500,31.02972]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Rehovot in the Negev>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Rehovot in the Negev"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Rehovot in the Negev"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "en"
+                }
+            }
+        },
+        {
+            "Name::/places/<Rehovot in the Negev>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Horbat Rehovot"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Horbat Rehovot"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Name::/places/<Rehovot in the Negev>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "El Raheiba"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "El Raheiba"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Name::/places/<Rehovot in the Negev>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Er Ruheibe"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Er Ruheibe"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<En Avdat>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.76222,30.82611]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<En Avdat>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "En Avdat"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "En Avdat"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Name::/places/<En Avdat>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "`Ein el Mureifij"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "`Ein el Mureifij"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Ben Shemen>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.92490,31.95400]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Ben Shemen>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Ben Shemen"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Ben Shemen"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Wadi Ibtah>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.59917,31.74111]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Wadi Ibtah>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Wadi Ibtah"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Wadi Ibtah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Name::/places/<Wadi Ibtah>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Nahal Evtah"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Nahal Evtah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<El-Kursi>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.64556,32.82528]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<El-Kursi>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "El-Kursi"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "El-Kursi"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<El-Al>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.74500,32.80278]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<El-Al>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "El-Al"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "El-Al"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Ajjur>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoHack Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.92390,31.69110]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoHack."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geohack-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Ajjur>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Ajjur"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Ajjur"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Name::/places/<Ajjur>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Agur"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Agur"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Valley of Elah>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoHack Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.95210,31.69030]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoHack."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geohack-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Valley of Elah>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Valley of Elah"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Valley of Elah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "en"
+                }
+            }
+        },
+        {
+            "Name::/places/<Valley of Elah>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Wadi es-Sunt"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Wadi es-Sunt"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Isawiyya>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoHack Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.24830,31.79860]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoHack."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geohack-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Isawiyya>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Isawiyya"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Isawiyya"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Sukeik>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.73333,33.17167]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Sukeik>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Sukeik"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Sukeik"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Kefar Barukh>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.19056,32.64611]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Kefar Barukh>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Kefar Barukh"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Kefar Barukh"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<El-'Uyun>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.66694,32.71722]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<El-'Uyun>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "El-'Uyun"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "El-'Uyun"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Huqoq>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoHack Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.47889,32.88472]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoHack."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geohack-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Huqoq>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Huqoq"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Huqoq"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Name::/places/<Huqoq>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Yaquq"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Yaquq"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Name::/places/<Huqoq>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Horvat Huqoq"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Horvat Huqoq"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Er-Ram>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.23417,31.84944]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Er-Ram>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Er-Ram"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Er-Ram"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Umm ed-Dananir>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.81972,32.94500]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Umm ed-Dananir>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Umm ed-Dananir"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Umm ed-Dananir"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Name::/places/<Umm ed-Dananir>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Umm Abū ad Danānīr"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Umm Abū ad Danānīr"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Hammath Tiberias>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoHack Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.54850,32.76850]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoHack."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geohack-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Hammath Tiberias>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Hammath Tiberias"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Hammath Tiberias"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Kafr El-Ma>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.81806,32.81111]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Kafr El-Ma>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Kafr El-Ma"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Kafr El-Ma"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Huldah>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.88222,31.83167]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Huldah>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Huldah"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Huldah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Ein Nashot>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "Google Earth Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.69144,33.01293]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from Google Earth."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "google-earth-and-partners-imagery-2015"
+                }
+            }
+        },
+        {
+            "Name::/places/<Ein Nashot>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Ein Nashot"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Ein Nashot"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Name::/places/<Ein Nashot>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Horvat Ein Nashut"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Horvat Ein Nashut"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Jurniyye>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.73528,32.88667]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Jurniyye>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Jurniyye"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Jurniyye"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Jisr Ghajar>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.62472,33.24222]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Jisr Ghajar>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Jisr Ghajar"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Jisr Ghajar"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Beit Yerah>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoHack Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.57186,32.71796]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoHack."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geohack-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Beit Yerah>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Beit Yerah"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Beit Yerah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Name::/places/<Beit Yerah>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Khirbet al-Karak"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Khirbet al-Karak"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Hafar>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.68861,33.09444]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Hafar>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Hafar"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Hafar"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Kafr Harib>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.65972,32.75722]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Kafr Harib>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Kafr Harib"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Kafr Harib"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Squffiye>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.68778,32.80167]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Squffiye>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Squffiye"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Squffiye"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Farj>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.83250,32.95750]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Farj>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Farj"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Farj"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Qiryat Tiv'on>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.12472,32.71611]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Qiryat Tiv'on>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Qiryat Tiv'on"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Qiryat Tiv'on"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Horvat Raqiq>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.69939,31.29531]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Horvat Raqiq>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Horvat Raqiq"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Horvat Raqiq"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Location::/places/<Dareya>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[36.25000,33.45000]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Dareya>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Dareya"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Dareya"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Umm al-Jimal>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoHack Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[36.36972,32.32667]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoHack."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geohack-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Umm al-Jimal>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Umm al-Jimal"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Umm al-Jimal"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Rujm Zaki>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.71500,32.81194]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Rujm Zaki>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Rujm Zaki"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Rujm Zaki"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Name::/places/<Rujm Zaki>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Tell ez Zakiye"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Tell ez Zakiye"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Name::/places/<Rujm Zaki>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Ard Zaki"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Ard Zaki"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Fiq>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.72500,32.79444]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Fiq>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Fiq"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Fiq"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Dabiyye>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.72889,33.00806]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Dabiyye>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Dabiyye"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Dabiyye"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Name::/places/<Dabiyye>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Dabiyah"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Dabiyah"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Ein Semsem>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.70222,33.02500]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Ein Semsem>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Ein Semsem"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Ein Semsem"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        },
+        {
+            "Name::/places/<Ein Semsem>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Ayn as Simsim"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Ayn as Simsim"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<El-Bireh>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoHack; GeoNames Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[35.78000,33.63000]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoHack; GeoNames."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geonames-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<El-Bireh>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "El-Bireh"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "El-Bireh"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "ar"
+                }
+            }
+        },
+        {
+            "Location::/places/<Kibbutz Lahav>": {
+                "title": {
+                    "mode": "replace",
+                    "values": "GeoHack Location"
+                },
+                "geometry": {
+                    "mode": "replace",
+                    "values": "Point:[34.87040,31.37830]"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Representative point location, derived from GeoHack."
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "positional_accuracy": {
+                    "mode": "replace",
+                    "values": "generic-geohack-accuracy-assessment"
+                }
+            }
+        },
+        {
+            "Name::/places/<Kibbutz Lahav>": {
+                "nameType": {
+                    "mode": "replace",
+                    "values": "geographic"
+                },
+                "transliterated": {
+                    "mode": "replace",
+                    "values": "Kibbutz Lahav"
+                },
+                "subject": {
+                    "mode": "replace",
+                    "values": "IIP"
+                },
+                "title": {
+                    "mode": "replace",
+                    "values": "Kibbutz Lahav"
+                },
+                "description": {
+                    "mode": "replace",
+                    "values": "Name variant identified the Inscriptions of Israel/Palestine project."
+                },
+                "language": {
+                    "mode": "replace",
+                    "values": "he"
+                }
+            }
+        }
+    ]
+}
