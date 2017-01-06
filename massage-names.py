@@ -1,5 +1,5 @@
 """
-prepare calcs names json for upload
+validate, normalize, and augment Pleiades names data for batch upload create
 """
 
 import argparse
