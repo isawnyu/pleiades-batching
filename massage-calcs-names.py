@@ -10,12 +10,11 @@ from language_tags import tags
 import logging
 import os
 from polyglot.text import Text as Polytext
+from polyglot.detect import Detector as Polydetector
 import re
 import string
 import sys
 import traceback
-import trans
-import transliterate
 import unicodedata
 from unidecode import unidecode
 
@@ -36,33 +35,6 @@ PERIODS = {
 }
 ROMAN_LETTERS = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
 
-tl = transliterate.get_available_language_codes()
-TRANSLITERATE_LANGS = [t for t in tl if tags.check(t)]
-
-tl = [item for item in dir(trans) if not item.startswith("__")]
-trans_langs_omit = [
-    'PY2', 'Trans', 'ascii', 'ascii_str', 'c', 'codecs', 'slug', 'sys',
-    'tables', 'trans']
-tl = [item for item in tl if item not in trans_langs_omit]
-TRANS_LANGS = []
-for t in tl:
-    results = tags.search(t)
-    results = [r for r in results if r.type == 'language']
-    results = [r for r in results if r.deprecated is None]
-    results = [r.format for r in results if r.description[0].lower() == t]
-    TRANS_LANGS.extend(results)
-del t
-del tl
-TRANS_LANGS = list(set(TRANS_LANGS))
-TRANS_LANGS = [tl for tl in TRANS_LANGS if tl not in TRANSLITERATE_LANGS]
-
-LANG_NAMES = {}
-for l in TRANS_LANGS + TRANSLITERATE_LANGS:
-    tag = tags.tag(l)
-    lang = tags.language(l)
-    LANG_NAMES[l] = lang.description[0]
-print(LANG_NAMES)
-
 
 def arglogger(func):
     """
@@ -82,10 +54,6 @@ def main(args):
     main function
     """
     logger = logging.getLogger(sys._getframe().f_code.co_name)
-    logger.info(
-        'The following languages are available for automatic Romanization, '
-        'if needed: {}'.format(
-            ', '.join(sorted([v for k,v in LANG_NAMES.items()]))))
     src = args.source
     dest = args.destination
 
@@ -113,20 +81,11 @@ def main(args):
 
         language = v['language']
         if language == '':
-            if attested != '':
-                language = transliterate.detect_language(
-                    compatibility, heavy_check=True)
-                logger.warning(
-                    'No language was specified for "{}" ({}) in input data; '
-                    'however, detected value of "{}" will be used.'
-                    ''.format(attested, k, language))
-            else:
-                logger.error(
-                    'No language was specified in input data and, '
-                    'since no ATTESTED form was provided either, {} will be '
-                    'ignored.'
-                    ''.format(k))
-                continue
+            logger.error(
+                'No language was specified in input data so '
+                '{} will be ignored.'
+                ''.format(k))
+            continue
         if not tags.check(language):
             logger.error(
                 '"{}" does not validate as an IANA language code. {} will be '
@@ -171,27 +130,6 @@ def main(args):
                     logger.info(
                         '... created ROMANIZED form "{}" using the '
                         '"polyglot" package'.format(romanized))
-                    sys.exit(-1)
-                #
-                # elif language in TRANSLITERATE_LANGS:
-                #     romanized = transliterate.translit(
-                #         compatibility, language, reversed=True, strict=True)
-                #     logger.info(
-                #         '... created ROMANIZED form "{}" using the '
-                #         '"transliterate" package'.format(romanized))
-                # elif language in TRANS_LANGS:
-                #     romanized = trans.trans(compatibility)
-                #     logger.info(
-                #         '... created ROMANIZED form "{}" using the '
-                #         '"trans" package'.format(romanized))
-                # else:
-                #     logger.error(
-                #         '... failed to create ROMANIZED form from "{}" '
-                #         'because {} is not a supported transliteration '
-                #         'language. Ignoring {}.'
-                #         ''.format(attested, language, k))
-                #     sys.exit(-1)
-                #     continue
             else:
                 logger.error(
                     'Absence of both ATTESTED and ROMANIZED forms mean we '
