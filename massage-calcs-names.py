@@ -10,6 +10,7 @@ from language_tags import tags
 import logging
 import os
 from polyglot.text import Text as Polytext
+from polyglot.transliteration import Transliterator
 from polyglot.detect import Detector as Polydetector
 import re
 import string
@@ -105,7 +106,6 @@ def main(args):
                     'No ROMANIZED form was provided in {}. Trying to create '
                     'one...'
                     ''.format(k))
-                compatibility = unicodedata.normalize('NFKD', attested)
                 try:
                     # get script subtag that is explicit in the tag
                     iana_script = tags.tag(language).script.format
@@ -124,8 +124,9 @@ def main(args):
                         'it will be copied verbatim to ROMANIZED'
                         ''.format(attested))
                 else:
-                    text = Polytext(compatibility)
-                    romanized = ' '.join(text.transliterate('en'))
+                    transliterator = Transliterator(
+                        source_lang=language, target_lang='en')
+                    romanized = transliterator.transliterate(attested)
                     romanized = string.capwords(romanized)
                     logger.info(
                         '... created ROMANIZED form "{}" using the '
@@ -139,12 +140,23 @@ def main(args):
         banalized = unicodedata.normalize(
             'NFC', unidecode(
                 unicodedata.normalize('NFKD', romanized)))
-        if banalized != romanized:
-            logger.warning(
+        slug = sluggify(banalized)
+        polyfied = ''
+        if 'Latn' not in language:
+            transliterator = Transliterator(
+                source_lang=language, target_lang='en')
+            polyfied = transliterator.transliterate(attested)
+            polyfied = string.capwords(polyfied)
+            if polyfied not in romanized:
+                logger.info(
+                    'adding polyfied form "{}" to romanized "{}"'
+                    ''.format(polyfied, romanized))
+                romanized = ', '.join((romanized, polyfied))
+        if banalized not in romanized:
+            logger.info(
                 'adding banalized form "{}" to romanized "{}"'
                 ''.format(banalized, romanized))
             romanized = ', '.join((romanized, banalized))
-        slug = sluggify(banalized)
 
         details = v['details']
 
@@ -180,8 +192,9 @@ def main(args):
                 [
                     '\nKey attributes:',
                     '  attested: {}'.format(attested),
-                    '  romanized: {}'.format(romanized),
                     '  banalized: {}'.format(banalized),
+                    '  polyfied: {}'.format(polyfied),
+                    '  romanized: {}'.format(romanized),
                     '  slug: {}'.format(slug),
                     '  language: {}'.format(language),
                     '  pid: {}'.format(pid)
