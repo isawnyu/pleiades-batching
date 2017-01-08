@@ -14,12 +14,18 @@ def test_instantiation_pid_none():
 
 @raises(ValueError)
 def test_instantiation_pid_empty():
-    pn = PleiadesName('', language='en', summary='foo')
+    pn = PleiadesName('', language='en', attested='Moontown', summary='foo')
 
 
 @raises(ValueError)
 def test_instantiation_pid_bad():
-    pn = PleiadesName('5fid&', language='en', summary='foo')
+    pn = PleiadesName(
+        '5fid&', language='en', attested='Moontown', summary='foo')
+
+
+@raises(ValueError)
+def test_instantiation_pid_404():
+    pn = PleiadesName('404', language='en', attested='Moontown', summary='foo')
 
 
 def test_instantiation_pid_good():
