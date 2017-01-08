@@ -53,7 +53,6 @@ class PleiadesName:
         self.association_certainty = association_certainty
         self.details = details  # note that HTML is not being tested
 
-
     # attribute: pid (ID of Pleiades place that will be parent of this name)
     @property
     def pid(self):
@@ -82,12 +81,10 @@ class PleiadesName:
 
     # utility methods
     def __valid_against_vocab(self, vocab, term):
-        try:
-            foo = VOCABULARIES[vocab][term]
-        except KeyError:
-            return False
-        else:
+        if term in VOCABULARIES[vocab]:
             return True
+        else:
+            return False
 
     def __validate_attributes(self, **kwargs):
         """ Validate standard attributes of the class """
