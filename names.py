@@ -1,4 +1,10 @@
-from language_tags import tags
+"""Construct and validate data for Pleiades name resources.
+
+Defines the class PleiadesName, whose attributes and methods constitute the
+full capabilities of this module.
+
+"""
+from language_tags import tags as language_tags
 from polyglot.detect import Detector as LanguageDetector
 import re
 from vocabularies import VOCABULARIES, UNICODE_RANGES
@@ -13,28 +19,7 @@ RX_ROMANIZED = re.compile('^[{}]*$'.format(RX_ROMANIZED))
 
 
 class PleiadesName:
-    """ a class for validating and fleshing-out a Pleiades name resource
-        Args:
-            self
-            pid: Pleiades Identifier with which this name is associated
-            associated_certainty: confidence in associating name with place(*)
-            attested: name form found in witness(es)
-            details: extended discussion
-            language: IANA-registered language tag for attested form
-            name_type: the type of name described by this resource(*)
-            romanized: romanized form(s) of the attested name
-            slug: a URL slug to be used to identify this name resource
-            summary: short summary explaining nature of this name resource
-            transcription_accuracy: assessment of accuracy of witness in
-                                    transmitting this name(*)
-            transcription_completeness: is the name as transmitted by the
-                                        witnesses fragmentary or complete?(*)
-
-            * - values for attributes marked with an asterisk above must be
-                drawn from an appropriate Pleiades project vocabulary. These
-                are imported from the "vocabularies" module.
-            ...
-    """
+    """Create, validate, and enhance data for a Pleiades name resource."""
 
     def __init__(
         self, pid: str, *,
@@ -49,6 +34,36 @@ class PleiadesName:
         transcription_accuracy: str = 'accurate',
         transcription_completeness: str = 'complete'
     ):
+        """Construct a PleiadesName object.
+
+        Args:
+            pid (required): Pleiades Identifier with which this name is
+                associated ("the parent place")
+            association_certainty*: confidence in associating name with place
+            attested: name form found in witness(es)
+            details: extended discussion
+            language (required)*: IANA-registered language tag for attested
+                form
+            name_type: the type of name described by this resource
+            romanized: romanized form(s) of the attested name
+            slug: a URL slug to be used to identify this name resource
+            summary (required): short summary explaining nature of this name
+                resource
+            transcription_accuracy*: assessment of accuracy of witness in
+                transmitting this name
+            transcription_completeness*: is the name as transmitted by the
+                witnesses fragmentary or complete?
+
+        * values for attributes marked with an asterisk above must be
+          drawn from an appropriate Pleiades project vocabulary. These
+          are imported from the "vocabularies" module.
+
+        Exceptions raised:
+            - TypeError: omission of required attributes or use of unexpected
+              object types for attribute values.
+            - ValueError: use of invalid values for attributes.
+
+        """
         if attested == '' and romanized == '':
             raise ValueError(
                 'A Pleiades name cannot be created if both the '
@@ -66,10 +81,22 @@ class PleiadesName:
     # attribute: pid (ID of Pleiades place that will be parent of this name)
     @property
     def pid(self):
+        """Get the vale of the object's 'pid' attribute."""
         return self._pid
 
     @pid.setter
-    def pid(self, v):
+    def pid(self, v: str):
+        """Set the value of the object's 'pid' attribute.
+
+        Args:
+            v: value to use
+
+        Exceptions raised:
+            - ValueError: the provided string does not conform to
+              restrictions on Pleiades IDs, i.e., a string of Arabic numeral
+              digits.
+
+        """
         m = RX_PID.match(v)
         if not m:
             raise ValueError(
@@ -82,20 +109,48 @@ class PleiadesName:
     # attribute: association_certainty
     @property
     def association_certainty(self):
+        """Get the value of the object's 'association_certainty' attribute."""
         return self._association_certainty
 
     @association_certainty.setter
-    def association_certainty(self, v):
+    def association_certainty(self, v: str):
+        """Set the value of the object's 'association_certainty' attribute.
+
+        Args:
+            v: value to use
+
+        Exceptions raised:
+            - ValueError: the provided string does not appear as a term in the
+              Pleiades "association certainty" vocabulary, and is therefore
+              invalid.
+
+        """
         if self.__valid_against_vocab('association_certainty', v):
             self._association_certainty = v
 
     # attribute: attested
     @property
     def attested(self):
+        """Get the value of the object's 'attested' attribute."""
         return self._attested
 
     @attested.setter
-    def attested(self, v):
+    def attested(self, v: str):
+        """Set the value of the object's "attested" attribute.
+
+        Args:
+            v: value to use
+
+        Exceptions raised:
+            - ValueError: v is non-zero length, but when the language
+              detection algorithm included in the "polyglot" package is run
+              against its contents, none of the possible language matches
+              identified by that algorithm corresponds to the value in the
+              object's "language" attribute. NB: this is why self.__init__
+              sets the "language" attribute before it sets the "attested"
+              attribute.
+
+        """
         if v != '':
             detector = LanguageDetector(v)
             languages = [l.code for l in detector.languages]
@@ -110,11 +165,22 @@ class PleiadesName:
     # attribute: language (IANA-registered language code)
     @property
     def language(self):
+        """Get the value of the object's "language" attribute."""
         return self._language
 
     @language.setter
-    def language(self, v):
-        if not tags.check(v):
+    def language(self, v: str):
+        """Set the value of the object's "language" attribute.
+
+        Args:
+            v: value to use
+
+        Exceptions raised:
+            - ValueError: the value in v is not a valid language subtag as
+              determined by the "language_tags" module.
+
+        """
+        if not language_tags.check(v):
             raise ValueError(
                 '"{}" does not validate as an IANA language tag.'
                 ''.format(v))
@@ -124,10 +190,23 @@ class PleiadesName:
     # attribute: romanized
     @property
     def romanized(self):
+        """Get the value of the object's "romanized" attribute."""
         return self._romanized
 
     @romanized.setter
-    def romanized(self, v):
+    def romanized(self, v: str):
+        """Set the value of the object's 'romanized' attribute.
+
+        Args:
+            v: value to use
+
+        Exceptions raised:
+            - ValueError: the provided string does not conform to
+              restrictions on Romanized name forms for Pleiades, i.e., only
+              Latinate (Roman) characters, combining diacriticals, and
+              associated punctuation marks may be used.
+
+        """
         m = RX_ROMANIZED.match(v)
         if not m:
             raise ValueError(
@@ -141,10 +220,23 @@ class PleiadesName:
     # attribute: slug
     @property
     def slug(self):
+        """Get the value of the object's "slug" attribute."""
         return self._slug
 
     @slug.setter
-    def slug(self, v):
+    def slug(self, v: str):
+        """Set the value of the object's "slug" attribute.
+
+        Args:
+            v: value to use
+
+        Exceptions raised:
+            - ValueError: the provided string does not conform to
+              restrictions on URL slugs for Pleiades name resources, i.e., only
+              lower-case ASCII characters, hyphens, and Arabic numeral digits
+              may be used.
+
+        """
         if v != '':
             m = RX_SLUG.match(v)
             if not m:
@@ -157,37 +249,64 @@ class PleiadesName:
     # attribute: transcription_accuracy
     @property
     def transcription_accuracy(self):
+        """Get the value of the object's "transcription_accuracy" attribute."""
         return self._transcription_accuracy
 
     @transcription_accuracy.setter
-    def transcription_accuracy(self, v):
-        if self.__valid_against_vocab('transcription_accuracy', v):
-            self._transcription_accuracy = v
+    def transcription_accuracy(self, v: str):
+        """Set the value of the object's "transcription_accuracy" attribute.
 
-    # attribute: transcription_accuracy
-    @property
-    def transcription_accuracy(self):
-        return self._transcription_accuracy
+        Args:
+            v: value to use
 
-    @transcription_accuracy.setter
-    def transcription_accuracy(self, v):
+        Exceptions raised:
+            - ValueError: the provided string does not appear as a term in the
+              Pleiades "transcription accuracy" vocabulary, and is therefore
+              invalid.
+
+        """
         if self.__valid_against_vocab('transcription_accuracy', v):
             self._transcription_accuracy = v
 
     # attribute: transcription_completeness
     @property
     def transcription_completeness(self):
+        """Get the value of the "transcription_completeness" attribute."""
         return self._transcription_completeness
 
     @transcription_completeness.setter
-    def transcription_completeness(self, v):
+    def transcription_completeness(self, v: str):
+        """Set the value of the object's "transcription_completeness" attribute.
+
+        Args:
+            v: value to use
+
+        Exceptions raised:
+            - ValueError: the provided string does not appear as a term in the
+              Pleiades "transcription completeness" vocabulary, and is
+              therefore invalid.
+
+        """
         if self.__valid_against_vocab('transcription_completeness', v):
             self._transcription_completeness = v
 
     # internal utility methods
     # ----------------
-    def __valid_against_vocab(self, vocab, term):
-        """Internal utility method used to validate a vocabulary term"""
+    def __valid_against_vocab(self, vocab: str, term: str):
+        """Validate a vocabulary term.
+
+        Args:
+            vocab: Name of the vocabulary against which to validate. Must be
+                   a key in the VOCABULARIES dictionary imported from the
+                   vocabularies module.
+            term: Vocabulary term to validate. Must be a key within the
+                  vocabulary dictionary returned by VOCABULARIES[vocab].
+
+        Returns:
+            True if the term is valid for the requested vocabulary. Raises
+            ValueError if not.
+
+        """
         vocab = VOCABULARIES[vocab]
         if term in vocab.keys():
             return True
