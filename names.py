@@ -3,6 +3,7 @@ import logging
 from polyglot.detect import Detector as LanguageDetector
 import re
 import sys
+
 from vocabularies import VOCABULARIES, UNICODE_RANGES
 
 RX_PID = re.compile('^\d+$')
@@ -11,7 +12,7 @@ RX_ROMANIZED = r''
 for k, v in UNICODE_RANGES.items():
     if 'latin' in k or k == 'combining_diacritical_marks':
         RX_ROMANIZED += r'{}-{}'.format(*v)
-RX_ROMANIZED = re.compile('^[{}]+$'.format(RX_ROMANIZED))
+RX_ROMANIZED = re.compile('^[{}]*$'.format(RX_ROMANIZED))
 
 
 class PleiadesName:
@@ -31,11 +32,11 @@ class PleiadesName:
         association_certainty: str = 'certain',
         attested: str = '',
         details: str = '',
-        language: str,
+        language: str,  # cannot be zero-length
         name_type: str = 'geographic',
         romanized: str = '',
         slug: str = '',
-        summary: str = '',
+        summary: str = '',  # cannot be zero-length
         transcription_accuracy: str = 'accurate',
         transcription_completeness: str = 'complete'
     ):
@@ -49,9 +50,13 @@ class PleiadesName:
                 '"attested" and "romanized" fields are blank.')
         self.__validate_attributes(**arguments)
         self.pid = pid
+        self.language = language  # must be validated before attested
         self.attested = attested
         self.association_certainty = association_certainty
         self.details = details  # note that HTML is not being tested
+        self.romanized = romanized
+        self.slug = slug  # todo: validate uniqueness in context of parent pid
+        # todo: finish setting up getter/setter for remaining attributes
 
     # attribute: pid (ID of Pleiades place that will be parent of this name)
     @property
@@ -79,7 +84,73 @@ class PleiadesName:
         if self.__valid_against_vocab('association_certainty', v):
             self._association_certainty = v
 
+    # attribute: attested
+    @property
+    def attested(self):
+        return self._attested
+
+    @attested.setter
+    def attested(self, v):
+        if v != '':
+            detector = LanguageDetector(v)
+            languages = [l.code for l in detector.languages]
+            if self.language not in languages:
+                raise ValueError(
+                    'The provided value for the language tag ({}) '
+                    'does not match the language detected by '
+                    'polyglot for the attested name form "{}."'
+                    ''.format(self.language, v))
+        self._attested = v  # zero-length attested is ok
+
+    # attribute: language (IANA-registered language code)
+    @property
+    def language(self):
+        return self._language
+
+    @language.setter
+    def language(self, v):
+        if not tags.check(v):
+            raise ValueError(
+                '"{}" does not validate as an IANA language tag.'
+                ''.format(v))
+        else:
+            self._language = v
+
+    # attribute: romanized
+    @property
+    def romanized(self):
+        return self._romanized
+
+    @romanized.setter
+    def romanized(self, v):
+        m = RX_ROMANIZED.match(v)
+        if not m:
+            raise ValueError(
+                'A "romanized" Pleiades name string must only '
+                'contain "Latin" Unicode characters and combining '
+                'diacritics. "{}" does '
+                'not meet this requirement.'
+                ''.format(v))
+        self._romanized = v  # zero-length romanized form is ok
+
+    # attribute: slug
+    @property
+    def slug(self):
+        return self._slug
+
+    @slug.setter
+    def slug(self, v):
+        if v != '':
+            m = RX_SLUG.match(v)
+            if not m:
+                raise ValueError(
+                    'Pleiades name slugs must be strings of alpha-'
+                    'numeric Roman characters. "{}" does not meet '
+                    'this requirement.'.format(v))
+        self._slug = v  # zero-length slug is ok
+
     # utility methods
+    # ----------------
     def __valid_against_vocab(self, vocab, term):
         if term in VOCABULARIES[vocab]:
             return True
@@ -99,59 +170,13 @@ class PleiadesName:
             elif k == 'details':
                 pass
             elif k == 'language':
-                if not tags.check(v):
-                    raise ValueError(
-                        '"{}" does not validate as an IANA language tag.'
-                        ''.format(v))
-                elif kwargs['attested'] != '':
-                    detector = LanguageDetector(kwargs['attested'])
-                    languages = [l.code for l in detector.languages]
-                    if v not in languages:
-                        logger.error(
-                            'Polyglot detected {} for "{}", but provided '
-                            'language code value is "{}".'
-                            ''.format(
-                                repr(languages),
-                                kwargs['attested'],
-                                v))
-                        raise ValueError(
-                            'The provided match for the language tag ({}) '
-                            'does not match the language detected by '
-                            'polyglot for the attested name form "{}."'
-                            ''.format(v, kwargs['attested']))
+                pass
             elif k == 'romanized':
-                if v == '' and kwargs['attested'] == '':
-                    raise ValueError(
-                        'A Pleiades name cannot be created if both the '
-                        '"attested" and "romanized" fields are blank.')
-                elif v == '':
-                    pass
-                else:
-                    m = RX_ROMANIZED.match(v)
-                    if not m:
-                        raise ValueError(
-                            'A "romanized" Pleiades name string must only '
-                            'contain "Latin" Unicode characters and combining '
-                            'diacritics. "{}" does '
-                            'not meet this requirement.'
-                            ''.format(v))
+                pass
             elif k == 'slug':
-                if v != '':
-                    m = RX_SLUG.match(v)
-                    if not m:
-                        raise ValueError(
-                            'Pleiades name slugs must be strings of alpha-'
-                            'numeric Roman characters. "{}" does not meet '
-                            'this requirement.'.format(v))
-                    else:
-                        # todo: validate uniqueness in context of parent pid
-                        logger.warning(
-                            'NOT IMPLEMENTED: slug uniqueness validation')
+                pass
             elif k == 'summary':
-                if v == '':
-                    raise ValueError(
-                        'PleiadesName attribute "summary" must not be a zero-'
-                        'length string (i.e., you must provide a "summary").')
+                pass
             else:
                 try:
                     vocab = VOCABULARIES[k]
