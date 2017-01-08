@@ -260,6 +260,13 @@ class PleiadesName:
                     'Pleiades name slugs must be strings of alpha-'
                     'numeric Roman characters. "{}" does not meet '
                     'this requirement.'.format(v))
+            else:
+                p_url = '/'.join((PLEIADES_PLACES_URL, self.pid, v))
+                r = requests.get(p_url)
+                if r.status_code == requests.codes.ok:
+                    raise ValueError(
+                        'The specified slug ({}) already exists in Pleiades.'
+                        ''.format(v))
         self._slug = v  # zero-length slug is ok
 
     # attribute: transcription_accuracy
