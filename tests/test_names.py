@@ -1,9 +1,9 @@
-import logging
 from names import PleiadesName
 from nose.tools import raises, assert_equal
-import sys
 from vocabularies import VOCABULARIES
 
+PID_404 = '1'  # doesn't exist
+PID_200 = '857359'  # Trapezus https://pleiades.stoa.org/places/857359
 
 # Pleiades IDs (pid)
 # ---------------------------------------------------------------------------
@@ -25,16 +25,16 @@ def test_instantiation_pid_bad():
 
 @raises(ValueError)
 def test_instantiation_pid_404():
-    pn = PleiadesName('404', language='en', attested='Moontown', summary='foo')
+    pn = PleiadesName(PID_404, language='en', attested='Moontown', summary='foo')
 
 
 def test_instantiation_pid_good():
     pn = PleiadesName(
-        '543219345',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en')
-    assert_equal('543219345', pn.pid)
+    assert_equal(PID_200, pn.pid)
 
 
 # association certainty
@@ -42,7 +42,7 @@ def test_instantiation_pid_good():
 @raises(ValueError)
 def test_association_certainty_empty():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en',
@@ -52,7 +52,7 @@ def test_association_certainty_empty():
 @raises(ValueError)
 def test_association_certainty_bad():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en',
@@ -63,7 +63,7 @@ def test_association_certainty_good():
     vocab = VOCABULARIES['association_certainty']
     for k in vocab.keys():
         pn = PleiadesName(
-            '1',
+            PID_200,
             summary='foo',
             attested='Moontown',
             language='en',
@@ -84,7 +84,7 @@ def test_vocabs_all_good():
                 'attested': 'Moontown',
                 'language': 'en',
             }
-            pn = PleiadesName('1', **kwargs)
+            pn = PleiadesName(PID_200, **kwargs)
 
 
 # attested and romanized forms
@@ -92,14 +92,14 @@ def test_vocabs_all_good():
 @raises(ValueError)
 def test_attested_and_romanized_blank():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         language='en')
 
 
 def test_attested_good():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         language='el',
         attested='Αθήνα')
@@ -108,7 +108,7 @@ def test_attested_good():
 
 def test_romanized_good_ascii():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         language='el',
         romanized='Athena')
@@ -116,7 +116,7 @@ def test_romanized_good_ascii():
 
 def test_romanized_good_ascii_commas():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         language='el',
         romanized='Athena, AQHNA')
@@ -124,7 +124,7 @@ def test_romanized_good_ascii_commas():
 
 def test_romanized_good_extended():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         language='mul',
         romanized='Català, Français, Kurdî, Română, Slovenščina, Türkçe')
@@ -132,7 +132,7 @@ def test_romanized_good_extended():
 
 def test_romanized_good_combining():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         language='el',
         romanized='Athēna')
@@ -141,7 +141,7 @@ def test_romanized_good_combining():
 @raises(ValueError)
 def test_romanized_nonlatin():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         language='el',
         romanized='Ελληνικά')
@@ -152,7 +152,7 @@ def test_romanized_nonlatin():
 @raises(ValueError)
 def test_language_bad():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='barbaric nonsense')
@@ -166,7 +166,7 @@ def test_language_all_good():
             'summary': 'foo',
             'romanized': 'Moontown',
         }
-        pn = PleiadesName('1', **kwargs)
+        pn = PleiadesName(PID_200, **kwargs)
 
 
 # URL slugs
@@ -174,7 +174,7 @@ def test_language_all_good():
 @raises(ValueError)
 def test_slug_bad_mixed_case():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en',
@@ -183,7 +183,7 @@ def test_slug_bad_mixed_case():
 
 def test_slug_good_lower_case():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en',
@@ -193,7 +193,7 @@ def test_slug_good_lower_case():
 @raises(ValueError)
 def test_slug_bad_punctuation():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en',
@@ -203,7 +203,7 @@ def test_slug_bad_punctuation():
 @raises(ValueError)
 def test_slug_bad_whitespace():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en',
@@ -212,7 +212,7 @@ def test_slug_bad_whitespace():
 
 def test_slug_good_hyphen():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en',
@@ -221,7 +221,7 @@ def test_slug_good_hyphen():
 
 def test_slug_good_alphanumeric():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en',
@@ -231,7 +231,7 @@ def test_slug_good_alphanumeric():
 @raises(ValueError)
 def test_slug_bad_non_latin():
     pn = PleiadesName(
-        '1',
+        PID_200,
         summary='foo',
         attested='Moontown',
         language='en',

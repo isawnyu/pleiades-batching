@@ -7,6 +7,7 @@ full capabilities of this module.
 from language_tags import tags as language_tags
 from polyglot.detect import Detector as LanguageDetector
 import re
+import requests
 from vocabularies import VOCABULARIES, UNICODE_RANGES
 
 RX_PID = re.compile('^\d+$')
@@ -16,6 +17,8 @@ for k, v in UNICODE_RANGES.items():
     if 'latin' in k or k == 'combining_diacritical_marks':
         RX_ROMANIZED += r'{}-{}'.format(*v)
 RX_ROMANIZED = re.compile('^[{}]*$'.format(RX_ROMANIZED))
+PLEIADES_BASE_URL = 'https://pleiades.stoa.org'
+PLEIADES_PLACES_URL = '/'.join((PLEIADES_BASE_URL, 'places'))
 
 
 class PleiadesName:
@@ -104,7 +107,16 @@ class PleiadesName:
                 'numeral digits. "{}" does not meet this requirement.'
                 ''.format(v))
         else:
-            self._pid = v
+            p_url = '/'.join((PLEIADES_PLACES_URL, v, 'json'))
+            r = requests.get(p_url)
+            if r.status_code != requests.codes.ok:
+                raise ValueError(
+                    'The specified pid ({}) does not seem to exist in '
+                    'Pleiades. Instead of the expected "200 OK" response, a '
+                    'GET request for "{}" yielded "{}".'
+                    ''.format(v, p_url, r.status_code))
+            else:
+                self._pid = v
 
     # attribute: association_certainty
     @property
