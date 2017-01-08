@@ -13,6 +13,7 @@ for k, v in UNICODE_RANGES.items():
         RX_ROMANIZED += r'{}-{}'.format(*v)
 RX_ROMANIZED = re.compile('^[{}]+$'.format(RX_ROMANIZED))
 
+
 class PleiadesName:
     """ a class for working up pleiades names
         Args:
@@ -25,24 +26,68 @@ class PleiadesName:
             ...
     """
 
-    def __init__(self, pid: str, *,
+    def __init__(
+        self, pid: str, *,
         association_certainty: str = 'certain',
         attested: str = '',
         details: str = '',
-        language: str = '',
+        language: str,
         name_type: str = 'geographic',
         romanized: str = '',
         slug: str = '',
         summary: str = '',
         transcription_accuracy: str = 'accurate',
         transcription_completeness: str = 'complete'
-        ):
+    ):
 
         # validate argument values
         arguments = locals()
         arguments = {k: v for k, v in arguments.items() if k != 'self'}
+        if attested == '' and romanized == '':
+            raise ValueError(
+                'A Pleiades name cannot be created if both the '
+                '"attested" and "romanized" fields are blank.')
         self.__validate_attributes(**arguments)
+        self.pid = pid
+        self.attested = attested
+        self.association_certainty = association_certainty
+        self.details = details  # note that HTML is not being tested
 
+
+    # attribute: pid (ID of Pleiades place that will be parent of this name)
+    @property
+    def pid(self):
+        return self._pid
+
+    @pid.setter
+    def pid(self, v):
+        m = RX_PID.match(v)
+        if not m:
+            raise ValueError(
+                'Pleiades IDs (pids) must be strings of Arabic '
+                'numeral digits. "{}" does not meet this requirement.'
+                ''.format(v))
+        else:
+            self._pid = v
+
+    # attribute: association_certainty
+    @property
+    def association_certainty(self):
+        return self._association_certainty
+
+    @association_certainty.setter
+    def association_certainty(self, v):
+        if self.__valid_against_vocab('association_certainty', v):
+            self._association_certainty = v
+
+    # utility methods
+    def __valid_against_vocab(self, vocab, term):
+        try:
+            foo = VOCABULARIES[vocab][term]
+        except KeyError:
+            return False
+        else:
+            return True
 
     def __validate_attributes(self, **kwargs):
         """ Validate standard attributes of the class """
@@ -51,17 +96,9 @@ class PleiadesName:
         for k, v in kwargs.items():
             logger.debug('validating "{}": "{}"'.format(k, v))
             if k == 'pid':
-                m = RX_PID.match(v)
-                if not m:
-                    raise ValueError(
-                        'Pleiades IDs (pids) must be strings of Arabic '
-                        'numeral digits. "{}" does not meet this requirement.'
-                        ''.format(v))
+                pass
             elif k == 'attested':
-                if v == '' and kwargs['romanized'] == '':
-                    raise ValueError(
-                        'A Pleiades name cannot be created if both the '
-                        '"attested" and "romanized" fields are blank.')
+                pass
             elif k == 'details':
                 pass
             elif k == 'language':
