@@ -1,5 +1,5 @@
 from names import PleiadesName
-from nose.tools import raises, assert_equal, assert_true
+from nose.tools import raises, assert_equal, assert_true, assert_false
 from vocabularies import VOCABULARIES
 
 PID_404 = '1'  # doesn't exist
@@ -258,3 +258,13 @@ def test_complete():
         slug='moontown',
         summary='A test name for Pleiades.')
     assert_true(pn.complete())
+
+
+def test_incomplete():
+    pn = PleiadesName(
+        PID_200,
+        attested='Moontown',
+        language='en',
+        romanized='Moontown',
+        summary='A test name for Pleiades.')
+    assert_false(pn.complete())
