@@ -181,6 +181,16 @@ def test_slug_bad_mixed_case():
         slug='Moontown')
 
 
+@raises(ValueError)
+def test_slug_exists():
+    pn = PleiadesName(
+        PID_200,
+        summary='foo',
+        attested='Moontown',
+        language='en',
+        slug='trapezus')
+
+
 def test_slug_good_lower_case():
     pn = PleiadesName(
         PID_200,
