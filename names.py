@@ -8,7 +8,11 @@ from language_tags import tags as language_tags
 from polyglot.detect import Detector as LanguageDetector
 import re
 import requests
+import requests_cache
 from vocabularies import VOCABULARIES, UNICODE_RANGES
+
+requests_cache.install_cache(backend='memory')
+requests_cache.clear()
 
 RX_PID = re.compile('^\d+$')
 RX_SLUG = re.compile('^[a-z\-\d]+$')
@@ -112,8 +116,8 @@ class PleiadesName:
             if r.status_code != requests.codes.ok:
                 raise ValueError(
                     'The specified pid ({}) does not seem to exist in '
-                    'Pleiades. Instead of the expected "200 OK" response, a '
-                    'GET request for "{}" yielded "{}".'
+                    'Pleiades. Instead of the expected "200 OK" response, '
+                    'a GET request for "{}" yielded "{}".'
                     ''.format(v, p_url, r.status_code))
             else:
                 self._pid = v
