@@ -14,12 +14,12 @@ def test_instantiation_pid_none():
 
 @raises(ValueError)
 def test_instantiation_pid_empty():
-    pn = PleiadesName('', language='en')
+    pn = PleiadesName('', language='en', summary='foo')
 
 
 @raises(ValueError)
 def test_instantiation_pid_bad():
-    pn = PleiadesName('5fid&', language='en')
+    pn = PleiadesName('5fid&', language='en', summary='foo')
 
 
 def test_instantiation_pid_good():

@@ -1,9 +1,6 @@
 from language_tags import tags
-import logging
 from polyglot.detect import Detector as LanguageDetector
 import re
-import sys
-
 from vocabularies import VOCABULARIES, UNICODE_RANGES
 
 RX_PID = re.compile('^\d+$')
@@ -16,14 +13,26 @@ RX_ROMANIZED = re.compile('^[{}]*$'.format(RX_ROMANIZED))
 
 
 class PleiadesName:
-    """ a class for working up pleiades names
+    """ a class for validating and fleshing-out a Pleiades name resource
         Args:
             self
-            pid
-            associated_certainty:
-            attested:
-            details:
-            language:
+            pid: Pleiades Identifier with which this name is associated
+            associated_certainty: confidence in associating name with place(*)
+            attested: name form found in witness(es)
+            details: extended discussion
+            language: IANA-registered language tag for attested form
+            name_type: the type of name described by this resource(*)
+            romanized: romanized form(s) of the attested name
+            slug: a URL slug to be used to identify this name resource
+            summary: short summary explaining nature of this name resource
+            transcription_accuracy: assessment of accuracy of witness in
+                                    transmitting this name(*)
+            transcription_completeness: is the name as transmitted by the
+                                        witnesses fragmentary or complete?(*)
+
+            * - values for attributes marked with an asterisk above must be
+                drawn from an appropriate Pleiades project vocabulary. These
+                are imported from the "vocabularies" module.
             ...
     """
 
@@ -36,19 +45,14 @@ class PleiadesName:
         name_type: str = 'geographic',
         romanized: str = '',
         slug: str = '',
-        summary: str = '',  # cannot be zero-length
+        summary: str,  # cannot be zero-length
         transcription_accuracy: str = 'accurate',
         transcription_completeness: str = 'complete'
     ):
-
-        # validate argument values
-        arguments = locals()
-        arguments = {k: v for k, v in arguments.items() if k != 'self'}
         if attested == '' and romanized == '':
             raise ValueError(
                 'A Pleiades name cannot be created if both the '
                 '"attested" and "romanized" fields are blank.')
-        self.__validate_attributes(**arguments)
         self.pid = pid
         self.language = language  # must be validated before attested
         self.attested = attested
@@ -56,7 +60,8 @@ class PleiadesName:
         self.details = details  # note that HTML is not being tested
         self.romanized = romanized
         self.slug = slug  # todo: validate uniqueness in context of parent pid
-        # todo: finish setting up getter/setter for remaining attributes
+        self.transcription_accuracy = transcription_accuracy
+        self.transcription_completeness = transcription_completeness
 
     # attribute: pid (ID of Pleiades place that will be parent of this name)
     @property
@@ -149,47 +154,47 @@ class PleiadesName:
                     'this requirement.'.format(v))
         self._slug = v  # zero-length slug is ok
 
-    # utility methods
+    # attribute: transcription_accuracy
+    @property
+    def transcription_accuracy(self):
+        return self._transcription_accuracy
+
+    @transcription_accuracy.setter
+    def transcription_accuracy(self, v):
+        if self.__valid_against_vocab('transcription_accuracy', v):
+            self._transcription_accuracy = v
+
+    # attribute: transcription_accuracy
+    @property
+    def transcription_accuracy(self):
+        return self._transcription_accuracy
+
+    @transcription_accuracy.setter
+    def transcription_accuracy(self, v):
+        if self.__valid_against_vocab('transcription_accuracy', v):
+            self._transcription_accuracy = v
+
+    # attribute: transcription_completeness
+    @property
+    def transcription_completeness(self):
+        return self._transcription_completeness
+
+    @transcription_completeness.setter
+    def transcription_completeness(self, v):
+        if self.__valid_against_vocab('transcription_completeness', v):
+            self._transcription_completeness = v
+
+    # internal utility methods
     # ----------------
     def __valid_against_vocab(self, vocab, term):
-        if term in VOCABULARIES[vocab]:
+        """Internal utility method used to validate a vocabulary term"""
+        vocab = VOCABULARIES[vocab]
+        if term in vocab.keys():
             return True
         else:
-            return False
-
-    def __validate_attributes(self, **kwargs):
-        """ Validate standard attributes of the class """
-
-        logger = logging.getLogger(sys._getframe().f_code.co_name)
-        for k, v in kwargs.items():
-            logger.debug('validating "{}": "{}"'.format(k, v))
-            if k == 'pid':
-                pass
-            elif k == 'attested':
-                pass
-            elif k == 'details':
-                pass
-            elif k == 'language':
-                pass
-            elif k == 'romanized':
-                pass
-            elif k == 'slug':
-                pass
-            elif k == 'summary':
-                pass
-            else:
-                try:
-                    vocab = VOCABULARIES[k]
-                except KeyError:
-                    logger.warning(
-                        'There is no validation test for "{}".'.format(k))
-                    raise NotImplementedError(k)
-                else:
-                    if v not in vocab.keys():
-                        raise ValueError(
-                            'PleiadesName attribute "{}" must be a string '
-                            'containing a value from the list: "{}." '
-                            'The provided value ("{}") does not meet this '
-                            'requirement.'
-                            ''.format(k, '", "'.join(vocab.keys()), v))
-
+            raise ValueError(
+                'PleiadesName attribute "{}" must be a string '
+                'containing a value from the list: "{}." '
+                'The provided value ("{}") does not meet this '
+                'requirement.'
+                ''.format(vocab, '", "'.join(vocab.keys()), term))
