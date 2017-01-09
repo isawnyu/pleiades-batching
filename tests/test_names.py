@@ -119,13 +119,14 @@ def test_attested_and_romanized_blank():
 
 
 def test_attested_good():
+    attested = 'Αθήνα'
     pn = PleiadesName(
         PID_200,
         summary='foo',
         language='el',
-        attested='Αθήνα',
+        attested=attested,
         skip_http_tests=SKIP_HTTP_TESTS)
-    assert_equal('Αθήνα', pn.attested)
+    assert_equal(attested, pn.attested)
 
 
 def test_romanized_good_ascii():

@@ -12,6 +12,7 @@ import requests
 from requests.exceptions import ConnectionError
 import requests_cache
 import sys
+import unicodedata
 from vocabularies import VOCABULARIES, UNICODE_RANGES
 
 requests_cache.install_cache(backend='memory')
@@ -54,7 +55,8 @@ class PleiadesName:
         summary: str,  # cannot be zero-length
         transcription_accuracy: str = 'accurate',
         transcription_completeness: str = 'complete',
-        skip_http_tests=False
+        skip_http_tests=False,
+        ignore_unicode_errors=False
     ):
         """Construct a PleiadesName object.
 
@@ -91,17 +93,20 @@ class PleiadesName:
                 'A Pleiades name cannot be created if both the '
                 '"attested" and "romanized" fields are blank.')
         self.skip_http_tests = skip_http_tests
-        self.pid = pid
-        self.language = language  # must be validated before attested
-        self.attested = attested
-        self.association_certainty = association_certainty
+        self.pid = self.__normalize_space(pid)
+        self.language = self.__normalize_space(language)
+        self.attested = self.__normalize_space(attested)
+        self.association_certainty = self.__normalize_space(
+            association_certainty)
         self.details = details  # note that HTML is not being tested
-        self.name_type = name_type
-        self.romanized = romanized
-        self.slug = slug  # todo: validate uniqueness in context of parent pid
-        self.summary = summary  # note that plain text is not being tested
-        self.transcription_accuracy = transcription_accuracy
-        self.transcription_completeness = transcription_completeness
+        self.name_type = self.__normalize_space(name_type)
+        self.romanized = self.__normalize_space(romanized)
+        self.slug = self.__normalize_space(slug)
+        self.summary = self.__normalize_space(summary)  # note that plain text is not being tested
+        self.transcription_accuracy = self.__normalize_space(
+            transcription_accuracy)
+        self.transcription_completeness = self.__normalize_space(
+            transcription_completeness)
 
     # attribute: pid (ID of Pleiades place that will be parent of this name)
     @property
@@ -196,7 +201,14 @@ class PleiadesName:
 
         """
         if v != '':
-            detector = LanguageDetector(v)
+            normed = self.__normalize_unicode(v)
+            if normed != v:
+                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger.info(
+                    'Attested name form "{}" was normalized to the '
+                    'Unicode canonical composition form "{}".'
+                    ''.format(v, normed))
+            detector = LanguageDetector(normed)
             languages = [l.code for l in detector.languages]
             if self.language not in languages:
                 raise ValueError(
@@ -204,7 +216,9 @@ class PleiadesName:
                     'does not match the language detected by '
                     'polyglot for the attested name form "{}."'
                     ''.format(self.language, v))
-        self._attested = v  # zero-length attested is ok
+            self._attested = normed
+        else:
+            self._attested = v
 
     # attribute: language (IANA-registered language code)
     @property
@@ -420,6 +434,27 @@ class PleiadesName:
                 return True
             else:
                 return False
+
+    def __normalize_space(self, v: str):
+        """Normalize space."""
+        return ' '.join(v.split())
+
+    def __normalize_unicode(self, v: str):
+        """Normalize Unicode."""
+        canonical = unicodedata.normalize('NFC', v)
+        compatibility = unicodedata.normalize('NFKC', v)
+        if canonical != compatibility:
+            msg = (
+                'Unicode normalization may have changed the string "{}" in '
+                'an undesireable way. The canonical composition form (NFC: '
+                '"{}") does not match the compatibility composition form ('
+                'NFKC: "{}"). NFC is being used.')
+            if self.ignore_unicode_errors:
+                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger.warning(msg)
+            else:
+                raise ValueError(msg)
+        return canonical
 
     def __valid_against_vocab(self, vocab: str, term: str):
         """Validate a vocabulary term.
