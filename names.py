@@ -287,15 +287,25 @@ class PleiadesName:
               associated punctuation marks may be used.
 
         """
-        m = RX_ROMANIZED.match(v)
-        if not m:
-            raise ValueError(
-                'A "romanized" Pleiades name string must only '
-                'contain "Latin" Unicode characters and combining '
-                'diacritics. "{}" does '
-                'not meet this requirement.'
-                ''.format(v))
-        self._romanized = v  # zero-length romanized form is ok
+        if v != '':
+            normed = self.__normalize_unicode(v)
+            if normed != v:
+                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger.info(
+                    'Romanized name form "{}" was normalized to the '
+                    'Unicode canonical composition form "{}".'
+                        ''.format(v, normed))
+            m = RX_ROMANIZED.match(normed)
+            if not m:
+                raise ValueError(
+                    'A "romanized" Pleiades name string must only '
+                    'contain "Latin" Unicode characters and combining '
+                    'diacritics. "{}" does '
+                    'not meet this requirement.'
+                    ''.format(normed))
+            self._romanized = normed
+        else:
+            self._romanized = v  # zero-length romanized form is ok
 
     # attribute: slug
     @property
