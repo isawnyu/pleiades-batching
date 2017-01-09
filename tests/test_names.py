@@ -260,7 +260,7 @@ def test_complete():
     assert_true(pn.complete())
 
 
-def test_incomplete():
+def test_incomplete_slug():
     pn = PleiadesName(
         PID_200,
         attested='Moontown',
