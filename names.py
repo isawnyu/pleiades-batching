@@ -409,6 +409,11 @@ class PleiadesName:
             return False
         return True
 
+    def generate_romanized(self):
+        """Generate a romanized form from the attested form."""
+
+        self.romanized = self.attested
+
     # internal utility methods
     def __fetch(self, name: str, url: str):
         """Fetch an item from the web and handle associated errors.

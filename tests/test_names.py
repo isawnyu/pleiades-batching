@@ -312,3 +312,16 @@ def test_incomplete_slug():
         summary='A test name for Pleiades.',
         skip_http_tests=SKIP_HTTP_TESTS)
     assert_false(pn.complete())
+
+
+def test_generate_romanized_ascii():
+    pn = PleiadesName(
+        PID_200,
+        attested='Moontown',
+        language='en',
+        summary='A test name for Pleiades.',
+        skip_http_tests=SKIP_HTTP_TESTS)
+    pn.generate_romanized()
+    assert_equal(pn.romanized, 'Moontown')
+
+
