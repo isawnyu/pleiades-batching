@@ -5,10 +5,13 @@ full capabilities of this module.
 
 """
 from language_tags import tags as language_tags
+import logging
 from polyglot.detect import Detector as LanguageDetector
 import re
 import requests
+from requests.exceptions import ConnectionError
 import requests_cache
+import sys
 from vocabularies import VOCABULARIES, UNICODE_RANGES
 
 requests_cache.install_cache(backend='memory')
@@ -23,6 +26,17 @@ for k, v in UNICODE_RANGES.items():
 RX_ROMANIZED = re.compile('^[{}]*$'.format(RX_ROMANIZED))
 PLEIADES_BASE_URL = 'https://pleiades.stoa.org'
 PLEIADES_PLACES_URL = '/'.join((PLEIADES_BASE_URL, 'places'))
+NONZERO = [
+    'pid',
+    'association_certainty',
+    'language',
+    'name_type',
+    'romanized',
+    'slug',
+    'summary',
+    'transcription_accuracy',
+    'transcription_completeness',
+]
 
 
 class PleiadesName:
@@ -39,7 +53,8 @@ class PleiadesName:
         slug: str = '',
         summary: str,  # cannot be zero-length
         transcription_accuracy: str = 'accurate',
-        transcription_completeness: str = 'complete'
+        transcription_completeness: str = 'complete',
+        skip_http_tests=False
     ):
         """Construct a PleiadesName object.
 
@@ -75,13 +90,16 @@ class PleiadesName:
             raise ValueError(
                 'A Pleiades name cannot be created if both the '
                 '"attested" and "romanized" fields are blank.')
+        self.skip_http_tests = skip_http_tests
         self.pid = pid
         self.language = language  # must be validated before attested
         self.attested = attested
         self.association_certainty = association_certainty
         self.details = details  # note that HTML is not being tested
+        self.name_type = name_type
         self.romanized = romanized
         self.slug = slug  # todo: validate uniqueness in context of parent pid
+        self.summary = summary  # note that plain text is not being tested
         self.transcription_accuracy = transcription_accuracy
         self.transcription_completeness = transcription_completeness
 
@@ -110,17 +128,27 @@ class PleiadesName:
                 'Pleiades IDs (pids) must be strings of Arabic '
                 'numeral digits. "{}" does not meet this requirement.'
                 ''.format(v))
+        elif self.skip_http_tests:
+            logger = logging.getLogger(sys._getframe().f_code.co_name)
+            logger.warning(
+                'Skipping HTTP test on pid="{}".'
+                ''.format(v))
+            self._pid = v
         else:
             p_url = '/'.join((PLEIADES_PLACES_URL, v, 'json'))
-            r = requests.get(p_url)
-            if r.status_code != requests.codes.ok:
-                raise ValueError(
-                    'The specified pid ({}) does not seem to exist in '
-                    'Pleiades. Instead of the expected "200 OK" response, '
-                    'a GET request for "{}" yielded "{}".'
-                    ''.format(v, p_url, r.status_code))
+            try:
+                success = self.__fetch('pid', p_url)
+            except:
+                raise
             else:
-                self._pid = v
+                if success:
+                    self._pid = v
+                else:
+                    raise ValueError(
+                        'Pleiades pid "{}" does not seem to have a '
+                        'corresponding place resource in Pleiades; therefore '
+                        'it cannot be the parent pid of a name resource.'
+                        ''.format(v))
 
     # attribute: association_certainty
     @property
@@ -203,6 +231,28 @@ class PleiadesName:
         else:
             self._language = v
 
+    # attribute: name_type
+    @property
+    def name_type(self):
+        """Get the value of the object's 'name_type' attribute."""
+        return self._name_type
+
+    @name_type.setter
+    def name_type(self, v: str):
+        """Set the value of the object's 'name_type' attribute.
+
+        Args:
+            v: value to use
+
+        Exceptions raised:
+            - ValueError: the provided string does not appear as a term in the
+              Pleiades "name type" vocabulary, and is therefore
+              invalid.
+
+        """
+        if self.__valid_against_vocab('name_type', v):
+            self._name_type = v
+
     # attribute: romanized
     @property
     def romanized(self):
@@ -260,13 +310,23 @@ class PleiadesName:
                     'Pleiades name slugs must be strings of alpha-'
                     'numeric Roman characters. "{}" does not meet '
                     'this requirement.'.format(v))
+            elif self.skip_http_tests:
+                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger.warning(
+                    'Skipping slug validation via HTTP for "{}".'
+                    ''.format(v))
             else:
                 p_url = '/'.join((PLEIADES_PLACES_URL, self.pid, v))
-                r = requests.get(p_url)
-                if r.status_code == requests.codes.ok:
-                    raise ValueError(
-                        'The specified slug ({}) already exists in Pleiades.'
-                        ''.format(v))
+                try:
+                    success = self.__fetch('slug', p_url)
+                except:
+                    raise
+                else:
+                    if success:
+                        raise ValueError(
+                            'The specified slug ({}) already exists in '
+                            'Pleiades.'
+                            ''.format(v))
         self._slug = v  # zero-length slug is ok
 
     # attribute: transcription_accuracy
@@ -313,8 +373,54 @@ class PleiadesName:
         if self.__valid_against_vocab('transcription_completeness', v):
             self._transcription_completeness = v
 
+    # public methods
+    def complete(self):
+        """Test and report completeness of the name resource."""
+
+        for field in NONZERO:
+            v = getattr(self, field)
+            if v == '':
+                return False
+        if self.attested == '' and self.romanized == '':
+            return False
+        return True
+
     # internal utility methods
-    # ----------------
+    def __fetch(self, name: str, url: str):
+        """Fetch an item from the web and handle associated errors.
+
+        Args:
+            name: Name of the item being fetched (for error message purposes)
+            url: URL to try to fetch
+
+        Returns:
+            True: if the response includes 200 or if a connection error occurs
+                  but self.ignore_http_errors == True
+            False:
+
+        """
+        try:
+            r = requests.get(url)
+        except ConnectionError:
+            logger = logging.getLogger(sys._getframe().f_code.co_name)
+            if not self.ignore_http_errors:
+                logger.error(
+                    'Encountered a web connection error trying to fetch URL '
+                    '({}) for "{}".'.format(url, name))
+                raise
+            else:
+                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger.warning(
+                    'Ignored connection error while attempting to fetch '
+                    'URL ({}) for "{}".'
+                    ''.format(url, name))
+                return True
+        else:
+            if r.status_code == requests.codes.ok:
+                return True
+            else:
+                return False
+
     def __valid_against_vocab(self, vocab: str, term: str):
         """Validate a vocabulary term.
 
