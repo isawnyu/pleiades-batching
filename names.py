@@ -7,12 +7,16 @@ full capabilities of this module.
 from language_tags import tags as language_tags
 import logging
 from polyglot.detect import Detector as LanguageDetector
+from polyglot.transliteration import Transliterator
 import re
 import requests
 from requests.exceptions import ConnectionError
 import requests_cache
+import string
 import sys
 import unicodedata
+from unidecode import unidecode
+from urllib.error import URLError
 from vocabularies import VOCABULARIES, UNICODE_RANGES
 
 requests_cache.install_cache(backend='memory')
@@ -214,8 +218,9 @@ class PleiadesName:
                 raise ValueError(
                     'The provided value for the language tag ({}) '
                     'does not match the language detected by '
-                    'polyglot for the attested name form "{}."'
-                    ''.format(self.language, v))
+                    'polyglot for the attested name form "{}." Possibilities '
+                    'include: {}.'
+                    ''.format(self.language, v, repr(languages)))
             self._attested = normed
         else:
             self._attested = v
@@ -244,6 +249,21 @@ class PleiadesName:
                 ''.format(v))
         else:
             self._language = v
+
+    # read-only attribute: language_script
+    @property
+    def language_script(self):
+        try:
+            # get script subtag that is explicit in the tag
+            iana_script = language_tags.tag(self.language).script.format
+        except AttributeError:
+            # there was no explicit script subtag
+            try:
+                # get default script subtag (suppress script)
+                iana_script = language_tags.language(self.language).script
+            except:
+                raise
+        return str(iana_script)
 
     # attribute: name_type
     @property
@@ -294,7 +314,7 @@ class PleiadesName:
                 logger.info(
                     'Romanized name form "{}" was normalized to the '
                     'Unicode canonical composition form "{}".'
-                        ''.format(v, normed))
+                    ''.format(v, normed))
             m = RX_ROMANIZED.match(normed)
             if not m:
                 raise ValueError(
@@ -412,7 +432,41 @@ class PleiadesName:
     def generate_romanized(self):
         """Generate a romanized form from the attested form."""
 
-        self.romanized = self.attested
+        r = []
+        if self.romanized != '':
+            r.append(self.romanized)
+        iana_script = self.language_script
+        if iana_script == 'Latn':
+            if self.attested not in r:
+                r.append(self.attested)
+            b = unicodedata.normalize(
+                'NFC', unidecode(
+                    unicodedata.normalize('NFKD', self.attested)))
+            if b not in r:
+                r.append(b)
+        try:
+            transliterator = Transliterator(
+                source_lang=iana_script, target_lang='en')
+        except URLError:
+            logger = logging.getLogger(sys._getframe().f_code.co_name)
+            msg = (
+                'The "polyglot" transliteration module '
+                'encountered an error trying to do something with a URL, '
+                'so its use in romanized form creation is not possible.')
+            if not self.skip_http_tests:
+                logger.error(msg)
+                raise
+            else:
+                logger.warning(msg)
+        else:
+            t = transliterator.transliterate(self.attested)
+            t = string.capwords(t)
+            if t not in r:
+                r.append(t)
+        self.romanized = ', '.join(r)
+
+    def generate_slug(self):
+        """Generate URL slug."""
 
     # internal utility methods
     def __fetch(self, name: str, url: str):
@@ -424,7 +478,7 @@ class PleiadesName:
 
         Returns:
             True: if the response includes 200 or if a connection error occurs
-                  but self.ignore_http_errors == True
+                  but self.ignore_http_tests == True
             False:
 
         """
@@ -432,7 +486,7 @@ class PleiadesName:
             r = requests.get(url)
         except ConnectionError:
             logger = logging.getLogger(sys._getframe().f_code.co_name)
-            if not self.ignore_http_errors:
+            if not self.skip_http_tests:
                 logger.error(
                     'Encountered a web connection error trying to fetch URL '
                     '({}) for "{}".'.format(url, name))

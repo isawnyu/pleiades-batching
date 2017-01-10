@@ -325,3 +325,48 @@ def test_generate_romanized_ascii():
     assert_equal(pn.romanized, 'Moontown')
 
 
+def test_generate_romanized_extended():
+    pn = PleiadesName(
+        PID_200,
+        attested='Română',
+        summary='foo',
+        language='ro',
+        skip_http_tests=SKIP_HTTP_TESTS)
+    pn.generate_romanized()
+    assert_equal(pn.romanized, 'Română, Romana')
+
+
+def test_generate_romanized_preset():
+    pn = PleiadesName(
+        PID_200,
+        attested='Română',
+        romanized='Română',
+        summary='foo',
+        language='ro',
+        skip_http_tests=SKIP_HTTP_TESTS)
+    pn.generate_romanized()
+    assert_equal(pn.romanized, 'Română, Romana')
+
+
+def test_generate_romanized_preset2():
+    pn = PleiadesName(
+        PID_200,
+        attested='Română',
+        romanized='Romana',
+        summary='foo',
+        language='ro',
+        skip_http_tests=SKIP_HTTP_TESTS)
+    pn.generate_romanized()
+    assert_equal(pn.romanized, 'Romana, Română')
+
+
+def test_generate_romanized_greek():
+    if not SKIP_HTTP_TESTS:
+        pn = PleiadesName(
+            PID_200,
+            attested='Αθήνα',
+            summary='foo',
+            language='el',
+            skip_http_tests=SKIP_HTTP_TESTS)
+        pn.generate_romanized()
+        assert_equal(pn.romanized, 'Athena')
