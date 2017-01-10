@@ -370,3 +370,52 @@ def test_generate_romanized_greek():
             skip_http_tests=SKIP_HTTP_TESTS)
         pn.generate_romanized()
         assert_equal(pn.romanized, 'Athena')
+
+
+def test_generate_slug_ascii():
+    if not SKIP_HTTP_TESTS:
+        pn = PleiadesName(
+            PID_200,
+            attested='Moontown',
+            summary='foo',
+            language='en',
+            skip_http_tests=SKIP_HTTP_TESTS)
+        pn.generate_slug()
+        assert_equal(pn.slug, 'moontown')
+
+
+def test_generate_slug_ascii_spaces():
+    if not SKIP_HTTP_TESTS:
+        pn = PleiadesName(
+            PID_200,
+            attested='Moontown Road',
+            summary='foo',
+            language='en',
+            skip_http_tests=SKIP_HTTP_TESTS)
+        pn.generate_slug()
+        assert_equal(pn.slug, 'moontown-road')
+
+
+def test_generate_slug_banalized():
+    if not SKIP_HTTP_TESTS:
+        pn = PleiadesName(
+            PID_200,
+            attested='Română',
+            summary='foo',
+            language='ro',
+            skip_http_tests=SKIP_HTTP_TESTS)
+        pn.generate_slug()
+        assert_equal(pn.slug, 'romana')
+
+
+def test_generate_slug_greek():
+    if not SKIP_HTTP_TESTS:
+        pn = PleiadesName(
+            PID_200,
+            attested='Αθήνα',
+            summary='foo',
+            language='el',
+            skip_http_tests=SKIP_HTTP_TESTS)
+        pn.generate_slug()
+        assert_equal(pn.slug, 'Athena')
+

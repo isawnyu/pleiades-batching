@@ -42,6 +42,8 @@ NONZERO = [
     'transcription_accuracy',
     'transcription_completeness',
 ]
+NOPUNCT = str.maketrans(
+    {key: None for key in string.punctuation if key != "-"})
 
 
 class PleiadesName:
@@ -467,6 +469,13 @@ class PleiadesName:
 
     def generate_slug(self):
         """Generate URL slug."""
+        names = [n.strip() for n in self.romanized.split(',')]
+        s = unicodedata.normalize(
+            'NFC', unidecode(
+                unicodedata.normalize('NFKD', names[0])))
+        s = s.lower().translate(NOPUNCT).split()
+        s = '-'.join(s).encode('ascii', 'xmlcharrefreplace')
+        self.slug = s.decode('ascii')
 
     # internal utility methods
     def __fetch(self, name: str, url: str):
