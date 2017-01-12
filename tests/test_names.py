@@ -419,3 +419,23 @@ def test_generate_slug_greek():
         pn.generate_slug()
         assert_equal(pn.slug, 'athina')
 
+
+def test_summary_ascii():
+    pn = PleiadesName(
+        PID_200,
+        attested='Moontown',
+        summary='Where oh where has my little dog gone?',
+        language='en',
+        skip_http_tests=SKIP_HTTP_TESTS)
+    assert_equal(pn.summary, 'Where oh where has my little dog gone?')
+
+
+@raises(ValueError)
+def test_summary_html():
+    pn = PleiadesName(
+        PID_200,
+        attested='Moontown',
+        summary='<p><b>Where oh where</b> has my little dog gone?</p>',
+        language='en',
+        skip_http_tests=SKIP_HTTP_TESTS)
+    assert_equal(pn.summary, 'Where oh where has my little dog gone?')

@@ -4,6 +4,7 @@ Defines the class PleiadesName, whose attributes and methods constitute the
 full capabilities of this module.
 
 """
+import html2text
 from language_tags import tags as language_tags
 import logging
 from polyglot.detect import Detector as LanguageDetector
@@ -108,7 +109,7 @@ class PleiadesName:
         self.name_type = self.__normalize_space(name_type)
         self.romanized = self.__normalize_space(romanized)
         self.slug = self.__normalize_space(slug)
-        self.summary = self.__normalize_space(summary)  # note that plain text is not being tested
+        self.summary = summary
         self.transcription_accuracy = self.__normalize_space(
             transcription_accuracy)
         self.transcription_completeness = self.__normalize_space(
@@ -374,6 +375,40 @@ class PleiadesName:
                             'Pleiades.'
                             ''.format(v))
         self._slug = v  # zero-length slug is ok
+
+    # attribute: summary
+    @property
+    def summary(self):
+        """Get the value of the object's "summary" attribute."""
+        return self._summary
+
+    @summary.setter
+    def summary(self, v: str):
+        """Set the value of the object's "summary" attribute.
+
+        Args:
+            v: value to use
+
+        Exceptions raised:
+            - ValueError: the provided string does not conform to
+              restrictions on URL slugs for Pleiades name resources, i.e.,
+              plain text.
+
+        """
+        h = html2text.HTML2Text()
+        h.ignore_links = True
+        h.ignore_images = True
+        h.ignore_emphasis = True
+        h.body_width = 0
+        w = h.handle(v).strip()
+        if w != v:
+            logger = logging.getLogger(sys._getframe().f_code.co_name)
+            logger.debug('v: "{}"'.format(v))
+            logger.debug('w: "{}"'.format(w))
+            raise ValueError(
+                'Value provided for summary "{}" appears not to be plain '
+                'text; rather, it appears to be HTML.')
+        self._summary = self.__normalize_space(self.__normalize_unicode(w))
 
     # attribute: transcription_accuracy
     @property
