@@ -4,6 +4,7 @@ Defines the class PleiadesName, whose attributes and methods constitute the
 full capabilities of this module.
 
 """
+import bleach
 import html2text
 from language_tags import tags as language_tags
 import logging
@@ -45,6 +46,8 @@ NONZERO = [
 ]
 NOPUNCT = str.maketrans(
     {key: None for key in string.punctuation if key != "-"})
+ALLOWED_TAGS = bleach.ALLOWED_TAGS
+ALLOWED_TAGS.extend(['p'])
 
 
 class PleiadesName:
@@ -105,7 +108,7 @@ class PleiadesName:
         self.attested = self.__normalize_space(attested)
         self.association_certainty = self.__normalize_space(
             association_certainty)
-        self.details = details  # note that HTML is not being tested
+        self.details = details
         self.name_type = self.__normalize_space(name_type)
         self.romanized = self.__normalize_space(romanized)
         self.slug = self.__normalize_space(slug)
@@ -227,6 +230,26 @@ class PleiadesName:
             self._attested = normed
         else:
             self._attested = v
+
+    # attribute: details
+    @property
+    def details(self):
+        """Get the value of the object's "details" attribute."""
+        return self._details
+
+    @details.setter
+    def details(self, v: str):
+        """Set the value of the object's "details" attribute."""
+        w = self.__normalize_space(self.__normalize_unicode(v))
+        w = bleach.clean(w, strip=True)
+        w = self.__normalize_space(w)
+        if w != v:
+            logger = logging.getLogger(sys._getframe().f_code.co_name)
+            logger.warning(
+                'Details was sanitized. Result: \n{}'.format(w))
+        self._details = w
+        if w != v:
+            raise ValueError('Details was sanitized. Result: \n{}'.format(w))
 
     # attribute: language (IANA-registered language code)
     @property

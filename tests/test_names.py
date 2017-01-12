@@ -439,3 +439,42 @@ def test_summary_html():
         language='en',
         skip_http_tests=SKIP_HTTP_TESTS)
     assert_equal(pn.summary, 'Where oh where has my little dog gone?')
+
+
+def test_details_plaintext():
+    d = "It's the end of the world as we know it, and I feel fine."
+    pn = PleiadesName(
+        PID_200,
+        attested='Moontown',
+        summary='foo',
+        language='en',
+        details=d,
+        skip_http_tests=SKIP_HTTP_TESTS)
+    assert_equal(d, pn.details)
+
+
+def test_details_goodhtml():
+    d = "<p>It's the end of the world as we know it, and I feel fine.</p>"
+    pn = PleiadesName(
+        PID_200,
+        attested='Moontown',
+        summary='foo',
+        language='en',
+        details=d,
+        skip_http_tests=SKIP_HTTP_TESTS)
+    assert_equal(d, pn.details)
+
+
+@raises(ValueError)
+def test_details_badhtml():
+    d = ('<p style="tuttifruti">It\'s the end of the world as we know it, and '
+         ' I feel fine.</p>')
+    pn = PleiadesName(
+        PID_200,
+        attested='Moontown',
+        summary='foo',
+        language='en',
+        details=d,
+        skip_http_tests=SKIP_HTTP_TESTS)
+    assert_equal(d, pn.details)
+
