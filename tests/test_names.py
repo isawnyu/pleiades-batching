@@ -369,7 +369,7 @@ def test_generate_romanized_greek():
             language='el',
             skip_http_tests=SKIP_HTTP_TESTS)
         pn.generate_romanized()
-        assert_equal(pn.romanized, 'Athena')
+        assert_equal(pn.romanized, 'Athina')
 
 
 def test_generate_slug_ascii():
@@ -417,5 +417,5 @@ def test_generate_slug_greek():
             language='el',
             skip_http_tests=SKIP_HTTP_TESTS)
         pn.generate_slug()
-        assert_equal(pn.slug, 'Athena')
+        assert_equal(pn.slug, 'athina')
 

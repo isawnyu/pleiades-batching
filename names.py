@@ -448,7 +448,7 @@ class PleiadesName:
                 r.append(b)
         try:
             transliterator = Transliterator(
-                source_lang=iana_script, target_lang='en')
+                source_lang=self.language, target_lang='en')
         except URLError:
             logger = logging.getLogger(sys._getframe().f_code.co_name)
             msg = (
@@ -469,7 +469,11 @@ class PleiadesName:
 
     def generate_slug(self):
         """Generate URL slug."""
+        logger = logging.getLogger(sys._getframe().f_code.co_name)
+        if self.romanized == '':
+            self.generate_romanized()
         names = [n.strip() for n in self.romanized.split(',')]
+        logger.debug('names: {}'.format(names))
         s = unicodedata.normalize(
             'NFC', unidecode(
                 unicodedata.normalize('NFKD', names[0])))
