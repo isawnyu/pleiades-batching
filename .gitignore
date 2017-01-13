@@ -115,3 +115,7 @@ ENV/
 # Rope project settings
 .ropeproject
 *.bak
+
+# Open Office temp files
+.~lock.*
+~$
