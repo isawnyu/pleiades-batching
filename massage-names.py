@@ -10,7 +10,7 @@ import json
 import logging
 from names import PleiadesName
 import os
-from os.path import abspath, realpath, splitext
+from os.path import abspath, basename, realpath, splitext
 from pprint import pformat
 import re
 import sys
@@ -53,27 +53,27 @@ POSITIONAL_ARGUMENTS = [
     ['-w', '--veryverbose', False,
         'very verbose output (logging level == DEBUG)'],
     ['-r', '--romanize', False, 'generate full romanized forms'],
-    ['-s', '--sluggify', False, 'generate slugs']
+    ['-s', '--sluggify', False, 'generate slugs'],
+    ['-d', '--dialect', '', 'CSV dialect to use (default: sniff)']
 ]
 
 SUPPORTED_EXTENSIONS = ['.csv', '.json']
 
 
 @arglogger
-def read_file(fname: str):
+def read_file(fname: str, dialect: None):
     src_fname, src_ext = splitext(fname)
     func_s = 'read_{}'.format(src_ext[1:])
-    return globals()[func_s](fname)
+    return globals()[func_s](fname, dialect)
 
 
 @arglogger
-def read_csv(fname: str):
-    logger = logging.getLogger(sys._getframe().f_code.co_name)
+def read_csv(fname: str, dialect):
+    logger_name = ':'.join(
+        (basename(__file__), __name__, sys._getframe().f_code.co_name))
+    logger = logging.getLogger(logger_name)
     raw = []
     with open(fname, 'r') as f:
-        sample = f.read(1024)
-        dialect = csv.Sniffer().sniff(sample)
-        f.seek(0)
         reader = csv.DictReader(f, dialect=dialect)
         for row in reader:
             raw.append(row)
@@ -82,6 +82,7 @@ def read_csv(fname: str):
         ''.format(len(raw), fname))
     cooked = []
     for item in raw:
+        logger.debug(pformat(item))
         d = {k: v for k, v in item.items() if v is not None}
         d = {k: v for k, v in d.items() if normalize_space(v) != ''}
         cooked.append(d)
@@ -94,7 +95,7 @@ def read_json(fname: str):
 
 
 @arglogger
-def test_file(src: str):
+def test_file(src: str, dialect=None):
     """Test if this is a file we can do something with."""
     src_fname, src_ext = splitext(src)
     if src_ext == '.file':
@@ -106,7 +107,7 @@ def test_file(src: str):
             ''.format(src, SUPPORTED_EXTENSIONS))
     elif src_ext in SUPPORTED_EXTENSIONS:
         func_s = 'test_{}'.format(src_ext[1:])
-        globals()[func_s](src)
+        return globals()[func_s](src, dialect)
     else:
         raise ValueError(
             'Input filename has an unsupported extension ({}). Only these '
@@ -115,9 +116,33 @@ def test_file(src: str):
 
 
 @arglogger
-def test_csv(fname: str):
+def dialects_match(d1, d2):
+    if type(d1) == str:
+        dialect1 = CSV_DIALECTS[d1]
+    else:
+        dialect1 = d1
+    if type(d2) == str:
+        dialect2 = CSV_DIALECTS[d2]
+    else:
+        dialect2 = d2
+    attributes = {}
+    for a in dir(dialect1):
+        if a[0] != '_':
+            attributes[a] = getattr(dialect2, a)
+    attributes = {
+        k: v for k, v in attributes.items() if not callable(v)}
+    for k, v in attributes.items():
+        if v != getattr(dialect2, k):
+            return False
+    return True
+
+
+@arglogger
+def test_csv(fname: str, dialect_arg=None):
     """Test if a file object points to valid CSV file."""
-    logger = logging.getLogger(sys._getframe().f_code.co_name)
+    logger_name = ':'.join(
+        (basename(__file__), __name__, sys._getframe().f_code.co_name))
+    logger = logging.getLogger(logger_name)
     with open(fname, 'r') as f:
         smpl = f.read(1024)
     try:
@@ -127,37 +152,33 @@ def test_csv(fname: str):
             'Dialect detection error on file {}.'
             ''.format(fname)) from exc
     else:
-        attributes = {}
-        for a in dir(dialect):
-            if a[0] != '_':
-                attributes[a] = getattr(dialect, a)
-        attributes = {
-            k: v for k, v in attributes.items() if not callable(v)}
-        match = None
-        for dialect_name, dialect in CSV_DIALECTS.items():
-            logger.debug('trying dialect: {}'.format(dialect_name))
-            for k, v in attributes.items():
-                logger.debug('\t{}: {}'.format(k, v))
-                if v != getattr(dialect, k):
-                    logger.debug(
-                        '\t\tFAILED with {}'.format(getattr(dialect, k)))
-                    match = None
-                    break
-                else:
-                    match = dialect_name
-            if match is not None:
-                logger.info(
-                    'CSV file {} has dialect "{}".'.format(fname, match))
-                break
-        if match is None:
+        if dialect_arg is not None:
+            if not dialects_match(dialect_arg, dialect):
+                logger.warning(
+                    'Dialect argument ({}) and sniffer result ({}) do not '
+                    'match. Using dialect argument to read {}.'
+                    ''.format(dialect_arg, pformat(dialect), fname))
+            else:
+                logger.debug('Dialect arg and sniff match!')
+            return dialect_arg
+        else:
+            for k, v in CSV_DIALECTS.items():
+                logger.debug('trying dialect: {}'.format(dialect_name))
+                if dialects_match(dialect, v):
+                    logger.info(
+                        'CSV file {} has dialect "{}".'.format(fname, k))
+                    return k
             raise IOError(
                 'CSV file "{}" does not conform to any of the standard '
-                'syntax dialects ({}).'
-                ''.format(fname, ', '.join(CSV_DIALECTS.keys())))
+                'syntax dialects ({}). Test results: {}'
+                ''.format(
+                    fname,
+                    ', '.join(CSV_DIALECTS.keys()),
+                    pformat(dialect)))
 
 
 @arglogger
-def test_json(fname: str):
+def test_json(fname: str, **kwargs):
     raise NotImplementedError('JSON input file support is not yet available.')
 
 
@@ -170,12 +191,14 @@ def main(args):
     """
     main function
     """
-    logger = logging.getLogger(sys._getframe().f_code.co_name)
+    logger_name = ':'.join(
+        (basename(__file__), __name__, sys._getframe().f_code.co_name))
+    logger = logging.getLogger(logger_name)
     src = abspath(realpath(args.source))
     dest = abspath(realpath(args.destination))
 
-    test_file(src)
-    src_data = read_file(src)
+    dialect = test_file(src)
+    src_data = read_file(src, dialect)
     names = []
     for item in src_data:
         nameid = item['nameid']
@@ -184,23 +207,55 @@ def main(args):
         logger.debug(pformat(d))
         try:
             pn = PleiadesName(**d)
-        except TypeError as exc:
-            raise TypeError(
-                'Pleiades name creation failed because of inadequate input '
-                'data in ({}). Details: {}'
-                ''.format(repr(item), exc)) from exc
-        pn.generate_romanized()
-        pn.generate_slug()
+        except (TypeError, ValueError) as exc:
+            try:
+                title = item['romanized']
+            except:
+                title = item['attested']
+            logger.critical(
+                'validate-name:{}: Pleiades name creation failed because of '
+                'inadequate or inappropriate input '
+                'data in nameid={} ({}). Details: {}'
+                ''.format(nameid, nameid, title, exc))
+            continue
+        try:
+            pn.generate_romanized()
+        except ValueError as exc:
+            try:
+                title = item['romanized']
+            except:
+                title = item['attested']
+            logger.critical(
+                'generate-romanized:{}: Pleiades name creation failed during '
+                'attempted romanization '
+                'for nameid={} ({}). Details: {}'
+                ''.format(nameid, nameid, title, exc))
+            continue
+        try:
+            pn.generate_slug()
+        except ValueError as exc:
+            try:
+                title = item['romanized']
+            except:
+                title = item['attested']
+            logger.critical(
+                'generate-slug:{}: Pleiades name creation failed during slug '
+                'generation '
+                'for nameid={} ({}). Details: {}'
+                ''.format(nameid, nameid, title, exc))
+            continue
         arguments = dir(pn)
         arguments = [a for a in arguments if a[0] != '_']
         arguments = [a for a in arguments if not callable(getattr(pn, a))]
         d = {}
         for a in arguments:
             d[a] = getattr(pn, a)
+        d['nameid'] = nameid
+        d = {k: v for k, v in d.items() if v != ''}
         logger.debug(pformat(d))
-
-
-
+        names.append(d)
+    with open(dest, 'w') as f:
+        json.dump(names, f, ensure_ascii=False, sort_keys=True, indent=4)
 
 
 if __name__ == "__main__":
@@ -246,7 +301,7 @@ if __name__ == "__main__":
                     "command line option to set log_level failed "
                     "because '%s' is not a valid level name; using %s"
                     % (args_log_level, log_level_name))
-        if args.veryverbose:
+        elif args.veryverbose:
             log_level = logging.DEBUG
         elif args.verbose:
             log_level = logging.INFO

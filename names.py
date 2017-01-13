@@ -6,10 +6,12 @@ full capabilities of this module.
 """
 import bleach
 import html2text
+import inspect
 from language_tags import tags as language_tags
 import logging
 from polyglot.detect import Detector as LanguageDetector
 from polyglot.transliteration import Transliterator
+from pprint import pprint
 import re
 import requests
 from requests.exceptions import ConnectionError
@@ -23,6 +25,9 @@ from vocabularies import VOCABULARIES, UNICODE_RANGES
 
 requests_cache.install_cache(backend='memory')
 requests_cache.clear()
+
+# polyglot is overly chatty with warnings; shut it up
+logging.getLogger('polyglot.detect.base').setLevel('CRITICAL')
 
 RX_PID = re.compile('^\d+$')
 RX_SLUG = re.compile('^[a-z\-\d]+$')
@@ -145,7 +150,9 @@ class PleiadesName:
                 'numeral digits. "{}" does not meet this requirement.'
                 ''.format(w))
         elif self._skip_http_tests:
-            logger = logging.getLogger(sys._getframe().f_code.co_name)
+            logger_name = ':'.join(
+                (__name__, inspect.currentframe().f_code.co_name))
+            logger = logging.getLogger(logger_name)
             logger.warning(
                 'Skipping HTTP test on pid="{}".'
                 ''.format(w))
@@ -214,20 +221,31 @@ class PleiadesName:
             normed = self.__normalize_unicode(w)
             self._attested = normed
             if normed != v:
-                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger_name = ':'.join(
+                    (__name__, inspect.currentframe().f_code.co_name))
+                logger = logging.getLogger(logger_name)
                 logger.info(
                     'Attested name form "{}" was normalized to the '
                     'Unicode canonical composition form "{}".'
                     ''.format(w, normed))
             detector = LanguageDetector(normed)
-            languages = [l.code for l in detector.languages]
-            if self.language not in languages:
-                raise ValueError(
-                    'The provided value for the language tag ({}) '
-                    'does not match the language detected by '
-                    'polyglot for the attested name form "{}." Possibilities '
-                    'include: {}.'
-                    ''.format(self.language, w, repr(languages)))
+            languages = [l.code for l in detector.languages if l.code != 'un']
+            if detector.reliable:
+                if self.language not in languages:
+                    raise ValueError(
+                        'The provided value for the language tag ({}) '
+                        'does not match the language detected by '
+                        'polyglot for the attested name form "{}." '
+                        'Possibilities include: {}.'
+                        ''.format(self.language, w, '" or "'.join(languages)))
+            else:
+                logger_name = ':'.join(
+                    (__name__, inspect.currentframe().f_code.co_name))
+                logger = logging.getLogger(logger_name)
+                logger.info(
+                    'Skipping language verification for "{}" because polyglot '
+                    'thinks its identification ("{}") is unreliable.'
+                    ''.format(w, '" or "'.join(languages)))
         else:
             self._attested = w
 
@@ -241,11 +259,15 @@ class PleiadesName:
     def details(self, v: str):
         """Set the value of the object's "details" attribute."""
         w = self.__normalize_space(self.__normalize_unicode(v))
-        w = bleach.clean(w, strip=True)
-        w = self.__normalize_space(w)
-        self._details = w
-        if w != v:
-            raise ValueError('Details was sanitized. Result: \n{}'.format(w))
+        x = bleach.clean(w, strip=True)
+        x = self.__normalize_space(x)
+        self._details = x
+        if x != w:
+            logger_name = ':'.join(
+                (__name__, inspect.currentframe().f_code.co_name))
+            logger = logging.getLogger(logger_name)
+            logger.info(
+                'Details was sanitized. Result: \n{}'.format(x))
 
     # attribute: language (IANA-registered language code)
     @property
@@ -335,7 +357,9 @@ class PleiadesName:
             normed = self.__normalize_unicode(w)
             self._romanized = normed
             if normed != w:
-                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger_name = ':'.join(
+                    (__name__, inspect.currentframe().f_code.co_name))
+                logger = logging.getLogger(logger_name)
                 logger.info(
                     'Romanized name form "{}" was normalized to the '
                     'Unicode canonical composition form "{}".'
@@ -381,7 +405,9 @@ class PleiadesName:
                     'numeric Roman characters. "{}" does not meet '
                     'this requirement.'.format(w))
             elif self._skip_http_tests:
-                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger_name = ':'.join(
+                    (__name__, inspect.currentframe().f_code.co_name))
+                logger = logging.getLogger(logger_name)
                 logger.warning(
                     'Skipping slug validation via HTTP for "{}".'
                     ''.format(w))
@@ -395,8 +421,8 @@ class PleiadesName:
                     if success:
                         raise ValueError(
                             'The specified slug ({}) already exists in '
-                            'Pleiades.'
-                            ''.format(w))
+                            'Pleiades ({}).'
+                            ''.format(w, p_url))
 
     # attribute: summary
     @property
@@ -492,7 +518,7 @@ class PleiadesName:
 
         r = []
         if self.romanized != '':
-            r.append(self.romanized)
+            r = [n.strip() for n in self.romanized.split(',')]
         iana_script = self.language_script
         if iana_script == 'Latn':
             if self.attested not in r:
@@ -502,30 +528,35 @@ class PleiadesName:
                     unicodedata.normalize('NFKD', self.attested)))
             if b not in r:
                 r.append(b)
-        try:
-            transliterator = Transliterator(
-                source_lang=self.language, target_lang='en')
-        except URLError:
-            logger = logging.getLogger(sys._getframe().f_code.co_name)
-            msg = (
-                'The "polyglot" transliteration module '
-                'encountered an error trying to do something with a URL, '
-                'so its use in romanized form creation is not possible.')
-            if not self._skip_http_tests:
-                logger.error(msg)
-                raise
-            else:
-                logger.warning(msg)
         else:
-            t = transliterator.transliterate(self.attested)
-            t = string.capwords(t)
-            if t not in r:
-                r.append(t)
+            try:
+                transliterator = Transliterator(
+                    source_lang=self.language, target_lang='en')
+            except URLError:
+                logger_name = ':'.join(
+                    (__name__, inspect.currentframe().f_code.co_name))
+                logger = logging.getLogger(logger_name)
+                msg = (
+                    'The "polyglot" transliteration module '
+                    'encountered an error trying to do something with a URL, '
+                    'so its use in romanized form creation is not possible.')
+                if not self._skip_http_tests:
+                    logger.error(msg)
+                    raise
+                else:
+                    logger.warning(msg)
+            else:
+                t = transliterator.transliterate(self.attested)
+                t = string.capwords(t)
+                if t not in r:
+                    r.append(t)
         self.romanized = ', '.join(r)
 
     def generate_slug(self):
         """Generate URL slug."""
-        logger = logging.getLogger(sys._getframe().f_code.co_name)
+        logger_name = ':'.join(
+            (__name__, inspect.currentframe().f_code.co_name))
+        logger = logging.getLogger(logger_name)
         if self.romanized == '':
             self.generate_romanized()
         names = [n.strip() for n in self.romanized.split(',')]
@@ -554,14 +585,16 @@ class PleiadesName:
         try:
             r = requests.get(url)
         except ConnectionError:
-            logger = logging.getLogger(sys._getframe().f_code.co_name)
+            logger_name = ':'.join(
+                (__name__, inspect.currentframe().f_code.co_name))
+            logger = logging.getLogger(logger_name)
             if not self._skip_http_tests:
                 logger.error(
                     'Encountered a web connection error trying to fetch URL '
                     '({}) for "{}".'.format(url, name))
                 raise
             else:
-                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger = logging.getLogger(logger_name)
                 logger.warning(
                     'Ignored connection error while attempting to fetch '
                     'URL ({}) for "{}".'
@@ -588,7 +621,7 @@ class PleiadesName:
                 '"{}") does not match the compatibility composition form ('
                 'NFKC: "{}"). NFC is being used.')
             if self.ignore_unicode_errors:
-                logger = logging.getLogger(sys._getframe().f_code.co_name)
+                logger = logging.getLogger(logger_name)
                 logger.warning(msg)
             else:
                 raise ValueError(msg)
