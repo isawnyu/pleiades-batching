@@ -103,7 +103,7 @@ class PleiadesName:
                 'A Pleiades name cannot be created if both the '
                 '"attested" and "romanized" fields are blank.')
         self.skip_http_tests = skip_http_tests
-        self.pid = self.__normalize_space(pid)
+        self.pid = pid
         self.language = self.__normalize_space(language)
         self.attested = self.__normalize_space(attested)
         self.association_certainty = self.__normalize_space(
@@ -137,33 +137,32 @@ class PleiadesName:
               digits.
 
         """
-        m = RX_PID.match(v)
+        w = self.__normalize_space(v)
+        self._pid = w
+        m = RX_PID.match(w)
         if not m:
             raise ValueError(
                 'Pleiades IDs (pids) must be strings of Arabic '
                 'numeral digits. "{}" does not meet this requirement.'
-                ''.format(v))
+                ''.format(w))
         elif self.skip_http_tests:
             logger = logging.getLogger(sys._getframe().f_code.co_name)
             logger.warning(
                 'Skipping HTTP test on pid="{}".'
-                ''.format(v))
-            self._pid = v
+                ''.format(w))
         else:
-            p_url = '/'.join((PLEIADES_PLACES_URL, v, 'json'))
+            p_url = '/'.join((PLEIADES_PLACES_URL, w, 'json'))
             try:
                 success = self.__fetch('pid', p_url)
             except:
                 raise
             else:
-                if success:
-                    self._pid = v
-                else:
+                if not success:
                     raise ValueError(
                         'Pleiades pid "{}" does not seem to have a '
                         'corresponding place resource in Pleiades; therefore '
                         'it cannot be the parent pid of a name resource.'
-                        ''.format(v))
+                        ''.format(w))
 
     # attribute: association_certainty
     @property
@@ -184,8 +183,9 @@ class PleiadesName:
               invalid.
 
         """
-        if self.__valid_against_vocab('association_certainty', v):
-            self._association_certainty = v
+        w = self.__normalize_space(v)
+        self._association_certainty = w
+        self.__valid_against_vocab('association_certainty', w)
 
     # attribute: attested
     @property
@@ -210,14 +210,16 @@ class PleiadesName:
               attribute.
 
         """
-        if v != '':
-            normed = self.__normalize_unicode(v)
+        w = self.__normalize_space(v)
+        if w != '':
+            normed = self.__normalize_unicode(w)
+            self._attested = normed
             if normed != v:
                 logger = logging.getLogger(sys._getframe().f_code.co_name)
                 logger.info(
                     'Attested name form "{}" was normalized to the '
                     'Unicode canonical composition form "{}".'
-                    ''.format(v, normed))
+                    ''.format(w, normed))
             detector = LanguageDetector(normed)
             languages = [l.code for l in detector.languages]
             if self.language not in languages:
@@ -226,10 +228,9 @@ class PleiadesName:
                     'does not match the language detected by '
                     'polyglot for the attested name form "{}." Possibilities '
                     'include: {}.'
-                    ''.format(self.language, v, repr(languages)))
-            self._attested = normed
+                    ''.format(self.language, w, repr(languages)))
         else:
-            self._attested = v
+            self._attested = w
 
     # attribute: details
     @property
@@ -243,10 +244,6 @@ class PleiadesName:
         w = self.__normalize_space(self.__normalize_unicode(v))
         w = bleach.clean(w, strip=True)
         w = self.__normalize_space(w)
-        if w != v:
-            logger = logging.getLogger(sys._getframe().f_code.co_name)
-            logger.warning(
-                'Details was sanitized. Result: \n{}'.format(w))
         self._details = w
         if w != v:
             raise ValueError('Details was sanitized. Result: \n{}'.format(w))
@@ -269,12 +266,12 @@ class PleiadesName:
               determined by the "language_tags" module.
 
         """
-        if not language_tags.check(v):
+        w = self.__normalize_space(v)
+        self._language = w
+        if not language_tags.check(w):
             raise ValueError(
                 '"{}" does not validate as an IANA language tag.'
-                ''.format(v))
-        else:
-            self._language = v
+                ''.format(w))
 
     # read-only attribute: language_script
     @property
@@ -310,8 +307,9 @@ class PleiadesName:
               invalid.
 
         """
-        if self.__valid_against_vocab('name_type', v):
-            self._name_type = v
+        w = self.__normalize_space(v)
+        self._name_type = w
+        self.__valid_against_vocab('name_type', w)
 
     # attribute: romanized
     @property
@@ -333,14 +331,16 @@ class PleiadesName:
               associated punctuation marks may be used.
 
         """
-        if v != '':
-            normed = self.__normalize_unicode(v)
-            if normed != v:
+        w = self.__normalize_space(v)
+        if w != '':
+            normed = self.__normalize_unicode(w)
+            self._romanized = normed
+            if normed != w:
                 logger = logging.getLogger(sys._getframe().f_code.co_name)
                 logger.info(
                     'Romanized name form "{}" was normalized to the '
                     'Unicode canonical composition form "{}".'
-                    ''.format(v, normed))
+                    ''.format(w, normed))
             m = RX_ROMANIZED.match(normed)
             if not m:
                 raise ValueError(
@@ -349,9 +349,8 @@ class PleiadesName:
                     'diacritics. "{}" does '
                     'not meet this requirement.'
                     ''.format(normed))
-            self._romanized = normed
         else:
-            self._romanized = v  # zero-length romanized form is ok
+            self._romanized = w  # zero-length romanized form is ok
 
     # attribute: slug
     @property
@@ -373,20 +372,22 @@ class PleiadesName:
               may be used.
 
         """
-        if v != '':
-            m = RX_SLUG.match(v)
+        w = self.__normalize_space(v)
+        self._slug = w
+        if w != '':
+            m = RX_SLUG.match(w)
             if not m:
                 raise ValueError(
                     'Pleiades name slugs must be strings of alpha-'
                     'numeric Roman characters. "{}" does not meet '
-                    'this requirement.'.format(v))
+                    'this requirement.'.format(w))
             elif self.skip_http_tests:
                 logger = logging.getLogger(sys._getframe().f_code.co_name)
                 logger.warning(
                     'Skipping slug validation via HTTP for "{}".'
-                    ''.format(v))
+                    ''.format(w))
             else:
-                p_url = '/'.join((PLEIADES_PLACES_URL, self.pid, v))
+                p_url = '/'.join((PLEIADES_PLACES_URL, self.pid, w))
                 try:
                     success = self.__fetch('slug', p_url)
                 except:
@@ -396,8 +397,7 @@ class PleiadesName:
                         raise ValueError(
                             'The specified slug ({}) already exists in '
                             'Pleiades.'
-                            ''.format(v))
-        self._slug = v  # zero-length slug is ok
+                            ''.format(w))
 
     # attribute: summary
     @property
@@ -424,6 +424,7 @@ class PleiadesName:
         h.ignore_emphasis = True
         h.body_width = 0
         w = h.handle(v).strip()
+        self._summary = self.__normalize_space(self.__normalize_unicode(w))
         if w != v:
             logger = logging.getLogger(sys._getframe().f_code.co_name)
             logger.debug('v: "{}"'.format(v))
@@ -431,7 +432,6 @@ class PleiadesName:
             raise ValueError(
                 'Value provided for summary "{}" appears not to be plain '
                 'text; rather, it appears to be HTML.')
-        self._summary = self.__normalize_space(self.__normalize_unicode(w))
 
     # attribute: transcription_accuracy
     @property
@@ -452,8 +452,9 @@ class PleiadesName:
               invalid.
 
         """
-        if self.__valid_against_vocab('transcription_accuracy', v):
-            self._transcription_accuracy = v
+        w = self.__normalize_space(v)
+        self._transcription_accuracy = w
+        self.__valid_against_vocab('transcription_accuracy', w)
 
     # attribute: transcription_completeness
     @property
@@ -474,8 +475,9 @@ class PleiadesName:
               therefore invalid.
 
         """
-        if self.__valid_against_vocab('transcription_completeness', v):
-            self._transcription_completeness = v
+        w = self.__normalize_space(v)
+        self._transcription_completeness = w
+        self.__valid_against_vocab('transcription_completeness', w)
 
     # public methods
     def complete(self):
@@ -577,7 +579,7 @@ class PleiadesName:
 
     def __normalize_space(self, v: str):
         """Normalize space."""
-        return ' '.join(v.split())
+        return ' '.join(v.split()).strip()
 
     def __normalize_unicode(self, v: str):
         """Normalize Unicode."""
