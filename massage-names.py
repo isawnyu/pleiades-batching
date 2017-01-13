@@ -2,22 +2,47 @@
 validate, normalize, and augment Pleiades names data for batch upload create
 """
 
+from arglogger import arglogger
 import argparse
-from functools import wraps
 import inspect
+import csv
 import json
-from language_tags import tags
 import logging
+from names import PleiadesName
 import os
-from polyglot.text import Text as Polytext
-from polyglot.transliteration import Transliterator
-from polyglot.detect import Detector as Polydetector
+from os.path import abspath, realpath, splitext
+from pprint import pformat
 import re
-import string
 import sys
 import traceback
-import unicodedata
-from unidecode import unidecode
+
+CSV_DIALECTS = {}
+csv.register_dialect(
+    'excel-quote-none',
+    csv.get_dialect('excel'),
+    quoting=csv.QUOTE_NONE)
+csv.register_dialect(
+    'unix-quote-none',
+    csv.get_dialect('unix'),
+    quoting=csv.QUOTE_NONE)
+csv.register_dialect(
+    'excel-escape-quotes',
+    csv.get_dialect('excel'),
+    doublequote=False)
+csv.register_dialect(
+    'unix-escape-quotes',
+    csv.get_dialect('unix'),
+    doublequote=False)
+csv.register_dialect(
+    'excel-quote-all',
+    csv.get_dialect('excel'),
+    quoting=csv.QUOTE_ALL)
+csv.register_dialect(
+    'unix-quote-all',
+    csv.get_dialect('unix'),
+    quoting=csv.QUOTE_ALL)
+for dialect_name in csv.list_dialects():
+    CSV_DIALECTS[dialect_name] = csv.get_dialect(dialect_name)
 
 DEFAULT_LOG_LEVEL = logging.WARNING
 POSITIONAL_ARGUMENTS = [
@@ -27,26 +52,117 @@ POSITIONAL_ARGUMENTS = [
     ['-v', '--verbose', False, 'verbose output (logging level == INFO)'],
     ['-w', '--veryverbose', False,
         'very verbose output (logging level == DEBUG)'],
+    ['-r', '--romanize', False, 'generate full romanized forms'],
+    ['-s', '--sluggify', False, 'generate slugs']
 ]
-NOPUNCT = str.maketrans(
-    {key: None for key in string.punctuation if key != "-"})
-PERIODS = {
-    'mediaeval/byzantine': 'mediaeval-byzantine',
-    'modern': 'modern'
-}
-ROMAN_LETTERS = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+
+SUPPORTED_EXTENSIONS = ['.csv', '.json']
 
 
-def arglogger(func):
-    """
-    decorator to log argument calls to functions
-    """
-    @wraps(func)
-    def inner(*args, **kwargs):
-        logger = logging.getLogger(func.__name__)
-        logger.debug("called with arguments: %s, %s" % (args, kwargs))
-        return func(*args, **kwargs)
-    return inner
+@arglogger
+def read_file(fname: str):
+    src_fname, src_ext = splitext(fname)
+    func_s = 'read_{}'.format(src_ext[1:])
+    return globals()[func_s](fname)
+
+
+@arglogger
+def read_csv(fname: str):
+    logger = logging.getLogger(sys._getframe().f_code.co_name)
+    raw = []
+    with open(fname, 'r') as f:
+        sample = f.read(1024)
+        dialect = csv.Sniffer().sniff(sample)
+        f.seek(0)
+        reader = csv.DictReader(f, dialect=dialect)
+        for row in reader:
+            raw.append(row)
+    logger.info(
+        'read {} rows of data from CSV file {}'
+        ''.format(len(raw), fname))
+    cooked = []
+    for item in raw:
+        d = {k: v for k, v in item.items() if v is not None}
+        d = {k: v for k, v in d.items() if normalize_space(v) != ''}
+        cooked.append(d)
+    return cooked
+
+
+@arglogger
+def read_json(fname: str):
+    raise NotImplementedError('JSON input file support is not yet available.')
+
+
+@arglogger
+def test_file(src: str):
+    """Test if this is a file we can do something with."""
+    src_fname, src_ext = splitext(src)
+    if src_ext == '.file':
+        raise ValueError(
+            'Source filename has an invalid extension: ".file".')
+    elif src_ext in ['', '.']:
+        raise ValueError(
+            'Source filename {} needs an extension from the list {}.'
+            ''.format(src, SUPPORTED_EXTENSIONS))
+    elif src_ext in SUPPORTED_EXTENSIONS:
+        func_s = 'test_{}'.format(src_ext[1:])
+        globals()[func_s](src)
+    else:
+        raise ValueError(
+            'Input filename has an unsupported extension ({}). Only these '
+            'are supported: {}.'
+            ''.format(src, SUPPORTED_EXTENSIONS))
+
+
+@arglogger
+def test_csv(fname: str):
+    """Test if a file object points to valid CSV file."""
+    logger = logging.getLogger(sys._getframe().f_code.co_name)
+    with open(fname, 'r') as f:
+        smpl = f.read(1024)
+    try:
+        dialect = csv.Sniffer().sniff(smpl)
+    except csv.Error as exc:
+        raise csv.Error(
+            'Dialect detection error on file {}.'
+            ''.format(fname)) from exc
+    else:
+        attributes = {}
+        for a in dir(dialect):
+            if a[0] != '_':
+                attributes[a] = getattr(dialect, a)
+        attributes = {
+            k: v for k, v in attributes.items() if not callable(v)}
+        match = None
+        for dialect_name, dialect in CSV_DIALECTS.items():
+            logger.debug('trying dialect: {}'.format(dialect_name))
+            for k, v in attributes.items():
+                logger.debug('\t{}: {}'.format(k, v))
+                if v != getattr(dialect, k):
+                    logger.debug(
+                        '\t\tFAILED with {}'.format(getattr(dialect, k)))
+                    match = None
+                    break
+                else:
+                    match = dialect_name
+            if match is not None:
+                logger.info(
+                    'CSV file {} has dialect "{}".'.format(fname, match))
+                break
+        if match is None:
+            raise IOError(
+                'CSV file "{}" does not conform to any of the standard '
+                'syntax dialects ({}).'
+                ''.format(fname, ', '.join(CSV_DIALECTS.keys())))
+
+
+@arglogger
+def test_json(fname: str):
+    raise NotImplementedError('JSON input file support is not yet available.')
+
+
+def normalize_space(v: str):
+    return ' '.join(v.split()).strip()
 
 
 @arglogger
@@ -55,186 +171,36 @@ def main(args):
     main function
     """
     logger = logging.getLogger(sys._getframe().f_code.co_name)
-    src = args.source
-    dest = args.destination
+    src = abspath(realpath(args.source))
+    dest = abspath(realpath(args.destination))
 
-    # read in the name data
-    names = json.load(open(src, 'r'))
-    logger.info('read {} names from {}'.format(len(names), src))
-
-    complete_names = {}
-    for k, v in names.items():
-
-        logger.debug('\n\n--------------------------------------------------')
-        logger.debug('Processing {}'.format(k))
-
-        attested = unicodedata.normalize('NFC', v['attested'])
-        compatibility = unicodedata.normalize('NFKC', v['attested'])
-        if attested != compatibility:
-            logger.warning(
-                'Possible Unicode weirdness: canonical (NFC) form "{}" '
-                'does not match compatibility (NFCK) form "{}". Using '
-                'NFC for ATTESTED name.'.format(attested, compatibility))
-        if len(attested) == 0:
-            logger.warning(
-                'No ATTESTED value was provided in {}. It will be left blank.'
-                ''.format(k))
-
-        language = v['language']
-        if language == '':
-            logger.error(
-                'No language was specified in input data so '
-                '{} will be ignored.'
-                ''.format(k))
-            continue
-        if not tags.check(language):
-            logger.error(
-                '"{}" does not validate as an IANA language code. {} will be '
-                'ignored'.format(language, k))
-            continue
-
-        romanized = unicodedata.normalize('NFC', v['transliterated'])
-        compatibility = unicodedata.normalize('NFKC', v['transliterated'])
-        if romanized != compatibility:
-            logger.warning(
-                'Possible Unicode weirdness: canonical (NFC) form "{}" '
-                'does not match compatibility (NFCK) form "{}". Using '
-                'NFC for ROMANIZED name.'.format(romanized, compatibility))
-        if romanized == '':
-            if len(attested) > 0:
-                logger.info(
-                    'No ROMANIZED form was provided in {}. Trying to create '
-                    'one...'
-                    ''.format(k))
-                try:
-                    # get script subtag that is explicit in the tag
-                    iana_script = tags.tag(language).script.format
-                except AttributeError:
-                    # there was no explicit script subtag
-                    try:
-                        # get default script subtag (suppress script)
-                        iana_script = tags.language(language).script
-                    except:
-                        raise
-                iana_script = str(iana_script)
-                if iana_script == 'Latn':
-                    romanized = attested
-                    logger.info(
-                        '...ATTESTED form {} is already in Latin script, so '
-                        'it will be copied verbatim to ROMANIZED'
-                        ''.format(attested))
-                else:
-                    transliterator = Transliterator(
-                        source_lang=language, target_lang='en')
-                    romanized = transliterator.transliterate(attested)
-                    romanized = string.capwords(romanized)
-                    logger.info(
-                        '... created ROMANIZED form "{}" using the '
-                        '"polyglot" package'.format(romanized))
-            else:
-                logger.error(
-                    'Absence of both ATTESTED and ROMANIZED forms mean we '
-                    'cannot add this name. Ignoring {}.'.format(k))
-                continue
-
-        banalized = unicodedata.normalize(
-            'NFC', unidecode(
-                unicodedata.normalize('NFKD', romanized)))
-        slug = sluggify(banalized)
-        polyfied = ''
-        if 'Latn' not in language:
-            transliterator = Transliterator(
-                source_lang=language, target_lang='en')
-            polyfied = transliterator.transliterate(attested)
-            polyfied = string.capwords(polyfied)
-            if polyfied not in romanized:
-                logger.info(
-                    'adding polyfied form "{}" to romanized "{}"'
-                    ''.format(polyfied, romanized))
-                romanized = ', '.join((romanized, polyfied))
-        if banalized not in romanized:
-            logger.info(
-                'adding banalized form "{}" to romanized "{}"'
-                ''.format(banalized, romanized))
-            romanized = ', '.join((romanized, banalized))
-
-        details = v['details']
-
-        periods = [p for p in v['periods'] if p != '']
-        if len(periods) == 0:
-            logger.warning(
-                'No time period(s) were specified for "{}" ({}).'
-                ''.format(
-                    '{} ({})'.format(attested, romanized), k))
-        else:
-            periods = [PERIODS[p] for p in periods]
-
-        pid = v['pid']
-        if len(pid) == 0:
-            logger.error('No pid was specified. Ignoring {}.'
-                         ''.format(k))
-            continue
-
-        references = []
-        for i in range(1, 3):
-            title = v['ref{}'.format(i)]
-            url = v['ref{}url'.format(i)]
-            if len(title) != 0:
-                references.append(
-                    {
-                        'formatted_citation': title,
-                        'access_uri': url,
-                        'type': 'citesAsEvidence'
-                    })
-
-        logger.debug(
-            '\n'.join(
-                [
-                    '\nKey attributes:',
-                    '  attested: {}'.format(attested),
-                    '  banalized: {}'.format(banalized),
-                    '  polyfied: {}'.format(polyfied),
-                    '  romanized: {}'.format(romanized),
-                    '  slug: {}'.format(slug),
-                    '  language: {}'.format(language),
-                    '  pid: {}'.format(pid)
-                ]))
-
-        attributes = {
-            'romanized': romanized,
-            'language': language,
-            'periods': periods,
-            'referenceCitations': references
-        }
-        if len(details) > 0:
-            attributes['details'] = details
-        if len(attested) > 0:
-            attributes['attested'] = attested
-
-        path = 'Name::/places/{}/{}'.format(pid, slug)
-
-        directives = {}
-        for ak, av in attributes.items():
-            directives[ak] = {
-                'mode': 'replace',
-                'values': av
-            }
-
-        complete_names[path] = directives
-
-    complete_names = {
-        'updates': [{k: v} for k, v in complete_names.items()]
-        }
-
-    json.dump(complete_names, open(dest, 'w'), indent=4,
-              ensure_ascii=False, sort_keys=True)
+    test_file(src)
+    src_data = read_file(src)
+    names = []
+    for item in src_data:
+        nameid = item['nameid']
+        d = {k: v for k, v in item.items() if k != 'nameid'}
+        d['summary'] = 'foo'
+        logger.debug(pformat(d))
+        try:
+            pn = PleiadesName(**d)
+        except TypeError as exc:
+            raise TypeError(
+                'Pleiades name creation failed because of inadequate input '
+                'data in ({}). Details: {}'
+                ''.format(repr(item), exc)) from exc
+        pn.generate_romanized()
+        pn.generate_slug()
+        arguments = dir(pn)
+        arguments = [a for a in arguments if a[0] != '_']
+        arguments = [a for a in arguments if not callable(getattr(pn, a))]
+        d = {}
+        for a in arguments:
+            d[a] = getattr(pn, a)
+        logger.debug(pformat(d))
 
 
-def sluggify(raw):
-    """make a slug from raw string"""
-    chopped = raw.lower().translate(NOPUNCT).split()
-    cooked = '-'.join(chopped).encode('ascii', 'xmlcharrefreplace')
-    return (cooked.decode('ascii'))
+
 
 
 if __name__ == "__main__":
@@ -262,17 +228,14 @@ if __name__ == "__main__":
                 p[0],
                 p[1],
                 **d)
-        parser.add_argument('source', type=str,
-                            help='JSON file of data from massage-iip-places.py')
-        parser.add_argument('destination', type=str,
-                            help='filepath to which to write the JSON result')
-        # example positional argument
-        # parser.add_argument(
-        #     'foo',
-        #     metavar='N',
-        #     type=str,
-        #     nargs='1',
-        #     help="foo is better than bar except when it isn't")
+        parser.add_argument(
+            'source',
+            type=str,
+            help='JSON file of data from massage-iip-places.py')
+        parser.add_argument(
+            'destination',
+            type=str,
+            help='filepath to which to write the JSON result')
         args = parser.parse_args()
         if args.loglevel is not None:
             args_log_level = re.sub('\s+', '', args.loglevel.strip().upper())
