@@ -65,6 +65,8 @@ class PleiadesName:
         summary: str,  # cannot be zero-length
         transcription_accuracy: str = 'accurate',
         transcription_completeness: str = 'complete',
+        creators: str = '',
+        contributors: str = '',
         skip_http_tests=False,
         ignore_unicode_errors=False
     ):
@@ -98,7 +100,7 @@ class PleiadesName:
             - ValueError: use of invalid values for attributes.
 
         """
-        self.skip_http_tests = skip_http_tests
+        self._skip_http_tests = skip_http_tests
         self.pid = pid
         self.language = language
         self.attested = attested
@@ -142,7 +144,7 @@ class PleiadesName:
                 'Pleiades IDs (pids) must be strings of Arabic '
                 'numeral digits. "{}" does not meet this requirement.'
                 ''.format(w))
-        elif self.skip_http_tests:
+        elif self._skip_http_tests:
             logger = logging.getLogger(sys._getframe().f_code.co_name)
             logger.warning(
                 'Skipping HTTP test on pid="{}".'
@@ -378,7 +380,7 @@ class PleiadesName:
                     'Pleiades name slugs must be strings of alpha-'
                     'numeric Roman characters. "{}" does not meet '
                     'this requirement.'.format(w))
-            elif self.skip_http_tests:
+            elif self._skip_http_tests:
                 logger = logging.getLogger(sys._getframe().f_code.co_name)
                 logger.warning(
                     'Skipping slug validation via HTTP for "{}".'
@@ -423,9 +425,6 @@ class PleiadesName:
         w = h.handle(v).strip()
         self._summary = self.__normalize_space(self.__normalize_unicode(w))
         if w != v:
-            logger = logging.getLogger(sys._getframe().f_code.co_name)
-            logger.debug('v: "{}"'.format(v))
-            logger.debug('w: "{}"'.format(w))
             raise ValueError(
                 'Value provided for summary "{}" appears not to be plain '
                 'text; rather, it appears to be HTML.')
@@ -512,7 +511,7 @@ class PleiadesName:
                 'The "polyglot" transliteration module '
                 'encountered an error trying to do something with a URL, '
                 'so its use in romanized form creation is not possible.')
-            if not self.skip_http_tests:
+            if not self._skip_http_tests:
                 logger.error(msg)
                 raise
             else:
@@ -556,7 +555,7 @@ class PleiadesName:
             r = requests.get(url)
         except ConnectionError:
             logger = logging.getLogger(sys._getframe().f_code.co_name)
-            if not self.skip_http_tests:
+            if not self._skip_http_tests:
                 logger.error(
                     'Encountered a web connection error trying to fetch URL '
                     '({}) for "{}".'.format(url, name))
@@ -595,7 +594,7 @@ class PleiadesName:
                 raise ValueError(msg)
         return canonical
 
-    def __valid_against_vocab(self, vocab: str, term: str):
+    def __valid_against_vocab(self, vocab_name: str, term: str):
         """Validate a vocabulary term.
 
         Args:
@@ -610,7 +609,7 @@ class PleiadesName:
             ValueError if not.
 
         """
-        vocab = VOCABULARIES[vocab]
+        vocab = VOCABULARIES[vocab_name]
         if term in vocab.keys():
             return True
         else:
@@ -619,4 +618,4 @@ class PleiadesName:
                 'containing a value from the list: "{}." '
                 'The provided value ("{}") does not meet this '
                 'requirement.'
-                ''.format(vocab, '", "'.join(vocab.keys()), term))
+                ''.format(vocab_name, '", "'.join(vocab.keys()), term))
