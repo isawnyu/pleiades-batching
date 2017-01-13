@@ -98,25 +98,22 @@ class PleiadesName:
             - ValueError: use of invalid values for attributes.
 
         """
+        self.skip_http_tests = skip_http_tests
+        self.pid = pid
+        self.language = language
+        self.attested = attested
+        self.association_certainty = association_certainty
+        self.details = details
+        self.name_type = name_type
+        self.romanized = romanized
+        self.slug = slug
+        self.summary = summary
+        self.transcription_accuracy = transcription_accuracy
+        self.transcription_completeness = transcription_completeness
         if attested == '' and romanized == '':
             raise ValueError(
                 'A Pleiades name cannot be created if both the '
                 '"attested" and "romanized" fields are blank.')
-        self.skip_http_tests = skip_http_tests
-        self.pid = pid
-        self.language = self.__normalize_space(language)
-        self.attested = self.__normalize_space(attested)
-        self.association_certainty = self.__normalize_space(
-            association_certainty)
-        self.details = details
-        self.name_type = self.__normalize_space(name_type)
-        self.romanized = self.__normalize_space(romanized)
-        self.slug = self.__normalize_space(slug)
-        self.summary = summary
-        self.transcription_accuracy = self.__normalize_space(
-            transcription_accuracy)
-        self.transcription_completeness = self.__normalize_space(
-            transcription_completeness)
 
     # attribute: pid (ID of Pleiades place that will be parent of this name)
     @property
