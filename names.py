@@ -67,7 +67,7 @@ class PleiadesName:
         name_type: str = 'geographic',
         romanized: str = '',
         slug: str = '',
-        summary: str,  # cannot be zero-length
+        summary: str = '',
         transcription_accuracy: str = 'accurate',
         transcription_completeness: str = 'complete',
         creators: str = '',
@@ -88,7 +88,7 @@ class PleiadesName:
             name_type: the type of name described by this resource
             romanized: romanized form(s) of the attested name
             slug: a URL slug to be used to identify this name resource
-            summary (required): short summary explaining nature of this name
+            summary: short summary explaining nature of this name
                 resource
             transcription_accuracy*: assessment of accuracy of witness in
                 transmitting this name
@@ -568,6 +568,38 @@ class PleiadesName:
         s = '-'.join(s).encode('ascii', 'xmlcharrefreplace')
         self.slug = s.decode('ascii')
 
+    def generate_summary(self):
+        """Generate an abstract/summary for this name resource."""
+        logger_name = ':'.join(
+            (__name__, inspect.currentframe().f_code.co_name))
+        logger = logging.getLogger(logger_name)
+        p_url = '/'.join((PLEIADES_PLACES_URL, self.pid, 'json'))
+        place = self.__fetch('pid', p_url).json()
+        logger.debug('language tag: {}'.format(self.language))
+        lang_desc = language_tags.description(self.language)
+        if len(lang_desc) > 1 and '-' in self.language:
+            lang_desc = self.language.split('-')
+            script_desc = [l for l in lang_desc if len(l) == 4]
+            lang_desc = [l for l in lang_desc if len(l) < 4 and l.lower() == l]
+            lang_desc = language_tags.description(lang_desc[0])[0]
+            script_desc = language_tags.description(script_desc[0])[0]
+            lang_chunk = (
+                '{}-language name in {} script'
+                ''.format(lang_desc, script_desc))
+        else:
+            lang_desc = lang_desc[0]
+            script_desc = ''
+            lang_chunk = '{}-language name'.format(lang_desc)
+        title = place['title']
+        if title in lang_chunk:
+            title_chunk = ''
+        else:
+            title_chunk = 'associated with {}'.format(title)
+        summary = (' '.join((lang_chunk, title_chunk)))
+        if summary[-1] != '.':
+            summary += '.'
+        self.summary = summary
+
     # internal utility methods
     def __fetch(self, name: str, url: str):
         """Fetch an item from the web and handle associated errors.
@@ -602,7 +634,7 @@ class PleiadesName:
                 return True
         else:
             if r.status_code == requests.codes.ok:
-                return True
+                return r
             else:
                 return False
 

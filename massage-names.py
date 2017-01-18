@@ -46,7 +46,7 @@ for dialect_name in csv.list_dialects():
 
 DEFAULT_LOG_LEVEL = logging.WARNING
 POSITIONAL_ARGUMENTS = [
-    ['-l', '--loglevel', logging.getLevelName(DEFAULT_LOG_LEVEL),
+    ['-l', '--loglevel', '',
         'desired logging level (' +
         'case-insensitive string: DEBUG, INFO, WARNING, or ERROR'],
     ['-v', '--verbose', False, 'verbose output (logging level == INFO)'],
@@ -54,7 +54,8 @@ POSITIONAL_ARGUMENTS = [
         'very verbose output (logging level == DEBUG)'],
     ['-r', '--romanize', False, 'generate full romanized forms'],
     ['-s', '--sluggify', False, 'generate slugs'],
-    ['-d', '--dialect', '', 'CSV dialect to use (default: sniff)']
+    ['-d', '--dialect', '', 'CSV dialect to use (default: sniff)'],
+    ['-a', '--abstract', False, 'generate summaries']
 ]
 
 SUPPORTED_EXTENSIONS = ['.csv', '.json']
@@ -203,7 +204,6 @@ def main(args):
     for item in src_data:
         nameid = item['nameid']
         d = {k: v for k, v in item.items() if k != 'nameid'}
-        d['summary'] = 'foo'
         logger.debug(pformat(d))
         try:
             pn = PleiadesName(**d)
@@ -218,32 +218,37 @@ def main(args):
                 'data in nameid={} ({}). Details: {}'
                 ''.format(nameid, nameid, title, exc))
             continue
-        try:
-            pn.generate_romanized()
-        except ValueError as exc:
+        if args.romanize:
             try:
-                title = item['romanized']
-            except:
-                title = item['attested']
-            logger.critical(
-                'generate-romanized:{}: Pleiades name creation failed during '
-                'attempted romanization '
-                'for nameid={} ({}). Details: {}'
-                ''.format(nameid, nameid, title, exc))
-            continue
-        try:
-            pn.generate_slug()
-        except ValueError as exc:
+                pn.generate_romanized()
+            except ValueError as exc:
+                try:
+                    title = item['romanized']
+                except:
+                    title = item['attested']
+                logger.critical(
+                    'generate-romanized:{}: Pleiades name creation failed '
+                    'during attempted romanization '
+                    'for nameid={} ({}). Details: {}'
+                    ''.format(nameid, nameid, title, exc))
+                continue
+        if args.sluggify:
             try:
-                title = item['romanized']
-            except:
-                title = item['attested']
-            logger.critical(
-                'generate-slug:{}: Pleiades name creation failed during slug '
-                'generation '
-                'for nameid={} ({}). Details: {}'
-                ''.format(nameid, nameid, title, exc))
-            continue
+                pn.generate_slug()
+            except ValueError as exc:
+                try:
+                    title = item['romanized']
+                except:
+                    title = item['attested']
+                logger.critical(
+                    'generate-slug:{}: Pleiades name creation failed during '
+                    'slug generation '
+                    'for nameid={} ({}). Details: {}'
+                    ''.format(nameid, nameid, title, exc))
+                continue
+        if args.abstract:
+            print('boom')
+            pn.generate_summary()
         arguments = dir(pn)
         arguments = [a for a in arguments if a[0] != '_']
         arguments = [a for a in arguments if not callable(getattr(pn, a))]
@@ -292,7 +297,7 @@ if __name__ == "__main__":
             type=str,
             help='filepath to which to write the JSON result')
         args = parser.parse_args()
-        if args.loglevel is not None:
+        if args.loglevel != '':
             args_log_level = re.sub('\s+', '', args.loglevel.strip().upper())
             try:
                 log_level = getattr(logging, args_log_level)
