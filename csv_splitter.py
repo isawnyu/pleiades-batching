@@ -24,7 +24,8 @@ POSITIONAL_ARGUMENTS = [
     ['-w', '--veryverbose', False,
         'very verbose output (logging level == DEBUG)'],
     ['-k', '--key', '', 'name of field to use as key'],
-    ['-e', '--encoding', 'utf-8', 'CSV file character encoding (utf-8)']
+    ['-e', '--encoding', 'utf-8', 'CSV file character encoding (utf-8)'],
+    ['-s', '--streamline', False, 'skip empty rows']
 ]
 
 
@@ -100,6 +101,8 @@ def main(args):
                     'specified field ({}) does not contain delimiter'
                     ''.format(repr(item)))
                 dest_data.append(item)
+    if args.streamline:
+        dest_data = [item for item in dest_data if len(item.keys()) > 1]
     write_csv(dest, field_names=field_names, data=dest_data)
 
 
