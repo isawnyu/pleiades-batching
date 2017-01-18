@@ -68,6 +68,7 @@ class PleiadesName:
         romanized: str = '',
         slug: str = '',
         summary: str = '',
+        time_periods: list = [],
         transcription_accuracy: str = 'accurate',
         transcription_completeness: str = 'complete',
         creators: str = '',
@@ -454,6 +455,27 @@ class PleiadesName:
             raise ValueError(
                 'Value provided for summary "{}" appears not to be plain '
                 'text; rather, it appears to be HTML.')
+
+    # attribute: time_periods
+    @property
+    def time_periods(self):
+        """Get the value of the object's "time_periods" attribute."""
+        return self._time_periods
+
+    @time_periods.setter
+    def time_periods(self, periods: list):
+        """Set the value of the object's "time_periods" attribute."""
+        for p in periods:
+            q = self.__normalize_space(p)
+            try:
+                self.__valid_against_vocab('time-periods', q)
+            except ValueError:
+                raise
+            else:
+                try:
+                    self._time_periods.append(q)
+                except ValueError:
+                    self._time_periods = [q]
 
     # attribute: transcription_accuracy
     @property

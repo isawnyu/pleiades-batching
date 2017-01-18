@@ -55,7 +55,8 @@ POSITIONAL_ARGUMENTS = [
     ['-r', '--romanize', False, 'generate full romanized forms'],
     ['-s', '--sluggify', False, 'generate slugs'],
     ['-d', '--dialect', '', 'CSV dialect to use (default: sniff)'],
-    ['-a', '--abstract', False, 'generate summaries']
+    ['-a', '--abstract', False, 'generate summaries'],
+    ['-t', '--timeperiods', None, 'add time periods']
 ]
 
 SUPPORTED_EXTENSIONS = ['.csv', '.json']
@@ -196,10 +197,16 @@ def main(args):
         (basename(__file__), __name__, sys._getframe().f_code.co_name))
     logger = logging.getLogger(logger_name)
     src = abspath(realpath(args.source))
-    dest = abspath(realpath(args.destination))
-
     dialect = test_file(src)
     src_data = read_file(src, dialect)
+    try:
+        time_periods = abspath(realpath(args.timeperiods))
+    except TypeError:
+        time_periods = None
+    else:
+        dialect = test_file(time_periods)
+        time_periods = read_file(time_periods, dialect)
+    dest = abspath(realpath(args.destination))
     names = []
     for item in src_data:
         nameid = item['nameid']
