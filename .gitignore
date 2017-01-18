@@ -119,3 +119,4 @@ ENV/
 # Open Office temp files
 .~lock.*
 ~$*
+vocabscratch
