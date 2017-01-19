@@ -40,9 +40,11 @@ Script to validate and augment *Pleiades* names data for batch upload create.
 
 ### arglogger.py
 
+Defines a Decorator to log argument calls to functions.
+
 ### vocab_getter.py
 
-Script to scrape HTML version of a Pleiades vocab page and save as plain text.s
+Script to scrape HTML version of a Pleiades vocab page and save as plain text.
 
 ### vocabularies.py
 
