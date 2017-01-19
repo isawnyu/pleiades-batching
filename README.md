@@ -14,6 +14,12 @@ This repository **does not** contain the actual script used to perform the batch
 
 ## Modules and Scripts in this Repository
 
+NB: Usage for scripts can be displayed with the "-h" option, like:
+
+```
+python massage-names.py -h
+```
+
 ### csv_splitter.py
 
 A script for splitting CSV field values containing comma-delimited lists.
@@ -27,6 +33,8 @@ Defines the class ```PleiadesName```, whose attributes and methods constitute th
 Nosetests in tests/test_names.py. 
 
 ### massage-names.py
+
+Script to validate and augment *Pleiades* names data for batch upload create.
 
 ### pair_pids.py
 
@@ -42,12 +50,12 @@ Nosetests in tests/test_names.py.
 ## Todo
 
  - Refactor as a standard Python package, rather than a script pile.
- - Write packaging script for massage-*.py script outputs.
+ - Write packaging script for "massage" script outputs.
 
 ## Deprecated Stuff in This Module
 
 ### convert.py
 
-An early attempt at converting CSV into JSON suitable for the Pleiades batch loading script. It is partly superseded by the massage-*.py family of scripts, but we will also need to write a packaging script that will take output from the massage-*.py scripts and turn them into the JSON that the batch upload script expects.
+An early attempt at converting CSV into JSON suitable for the Pleiades batch loading script. It is partly superseded by the "massage" family of scripts, but we will also need to write a packaging script that will take output from the "massage" scripts and turn them into the JSON that the batch upload script expects.
 
 

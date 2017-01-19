@@ -1,12 +1,10 @@
 """
-validate, normalize, and augment Pleiades names data for batch upload create
+Script to validate and augment Pleiades names data for batch upload create.
 """
 
 from arglogger import arglogger
 import argparse
 import inspect
-import csv
-from csv_utilities import CSV_DIALECTS, read_csv, test_csv
 import json
 import logging
 from names import PleiadesName
