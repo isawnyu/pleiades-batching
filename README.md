@@ -36,8 +36,6 @@ Nosetests in tests/test_names.py.
 
 Script to validate and augment *Pleiades* names data for batch upload create.
 
-### pair_pids.py
-
 ### vocab_getter.py
 
 ### Utility Modules
@@ -57,5 +55,9 @@ Script to validate and augment *Pleiades* names data for batch upload create.
 ### convert.py
 
 An early attempt at converting CSV into JSON suitable for the Pleiades batch loading script. It is partly superseded by the "massage" family of scripts, but we will also need to write a packaging script that will take output from the "massage" scripts and turn them into the JSON that the batch upload script expects.
+
+### pair_pids.py
+
+The docstring says: "match up placenames and pids from update script output" but what actual good is it now?
 
 
