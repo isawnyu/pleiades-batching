@@ -1,9 +1,39 @@
-# A sample Python project README file
+# Support for Pleiades batch updates
 
-This is the README file for the project.
+## Reporting Bugs and Requesting New Features
 
-The file should use UTF-8 encoding and be written using [Github-flavored Markdown Text](https://guides.github.com/features/mastering-markdown/). It will be displayed as the package repository home page on [GitHub](https://github.com/), and should be written for that purpose. 
+**Please open bug reports and feature requests on [the central *Pleiades* Gazetteer issue tracker](https://github.com/isawnyu/pleiades-gazetteer/issues).**
 
-Note that, if and when the package is to be distributed via [PyPI](https://pypi.python.org/pypi)r, it will be necessary to convert this file to [reStructuredText](http://docutils.sourceforge.net/rst.html) format. [Pandoc](http://pandoc.org/) is the preferred tool for this task.
+## What This Is (and Isn't)
 
-Typical contents for this file would include an overview of the project, basic usage examples, etc. Generally, including the project changelog in here is not a good idea, although a simple "What's New" section for the most recent version may be appropriate.
+The code and documentation in this repository are intended to support the creation, submission, and validation of data intended for behind-the-scenes "batch" input into the [*Pleiades* gazetteer of ancient places](https://pleiades.stoa.org) (both updates to existing content and creation of new content). 
+
+This repository **does not** contain the actual script used to perform the batch update to the *Pleiades* Plone instance. That can be found in [the main *Pleiades* buildout repository](https://github.com/isawnyu/pleiades3-buildout), "jazkarta-plone4" branch, as [scripts/batch_update.py](https://github.com/isawnyu/pleiades3-buildout/tree/jazkarta-plone4/scripts). 
+
+## How?!
+
+## Modules and Scripts in this Repository
+
+### convert.py
+
+### csv_splitter.py
+
+### names.py
+
+### massage-names.py
+
+### pair_pids.py
+
+### vocab_getter.py
+
+### Utility Modules
+
+ - arglogger.py
+ - vocabularies.py
+ - csv_utilities.py
+ - normalize_space.py
+
+## Todo
+
+ - Refactor as a standard Python package, rather than a script pile.
+
