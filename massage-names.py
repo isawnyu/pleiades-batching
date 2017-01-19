@@ -6,7 +6,7 @@ from arglogger import arglogger
 import argparse
 import inspect
 import csv
-from csv_utilities import CSV_DIALECTS
+from csv_utilities import CSV_DIALECTS, read_csv, test_csv
 import json
 import logging
 from names import PleiadesName
@@ -29,48 +29,26 @@ POSITIONAL_ARGUMENTS = [
     ['-s', '--sluggify', False, 'generate slugs'],
     ['-d', '--dialect', '', 'CSV dialect to use (default: sniff)'],
     ['-a', '--abstract', False, 'generate summaries'],
-    ['-t', '--timeperiods', None, 'add time periods']
+    ['-e', '--encoding', 'utf-8', 'csv file encoding']
 ]
 
 SUPPORTED_EXTENSIONS = ['.csv', '.json']
 
 
 @arglogger
-def read_file(fname: str, dialect: None):
+def read_file(fname: str, dialect: None, encoding='utf-8'):
     src_fname, src_ext = splitext(fname)
     func_s = 'read_{}'.format(src_ext[1:])
-    return globals()[func_s](fname, dialect)
+    return globals()[func_s](fname, dialect, encoding)
 
 
 @arglogger
-def read_csv(fname: str, dialect):
-    logger_name = ':'.join(
-        (basename(__file__), __name__, sys._getframe().f_code.co_name))
-    logger = logging.getLogger(logger_name)
-    raw = []
-    with open(fname, 'r') as f:
-        reader = csv.DictReader(f, dialect=dialect)
-        for row in reader:
-            raw.append(row)
-    logger.info(
-        'read {} rows of data from CSV file {}'
-        ''.format(len(raw), fname))
-    cooked = []
-    for item in raw:
-        logger.debug(pformat(item))
-        d = {k: v for k, v in item.items() if v is not None}
-        d = {k: v for k, v in d.items() if normalize_space(v) != ''}
-        cooked.append(d)
-    return cooked
-
-
-@arglogger
-def read_json(fname: str):
+def read_json(fname: str, dialect: None, encoding='utf-8'):
     raise NotImplementedError('JSON input file support is not yet available.')
 
 
 @arglogger
-def test_file(src: str, dialect=None):
+def test_file(src: str, dialect_arg=None, encoding='utf-8'):
     """Test if this is a file we can do something with."""
     src_fname, src_ext = splitext(src)
     if src_ext == '.file':
@@ -82,74 +60,12 @@ def test_file(src: str, dialect=None):
             ''.format(src, SUPPORTED_EXTENSIONS))
     elif src_ext in SUPPORTED_EXTENSIONS:
         func_s = 'test_{}'.format(src_ext[1:])
-        return globals()[func_s](src, dialect)
+        return globals()[func_s](src, dialect_arg, encoding)
     else:
         raise ValueError(
             'Input filename has an unsupported extension ({}). Only these '
             'are supported: {}.'
             ''.format(src, SUPPORTED_EXTENSIONS))
-
-
-@arglogger
-def dialects_match(d1, d2):
-    if type(d1) == str:
-        dialect1 = CSV_DIALECTS[d1]
-    else:
-        dialect1 = d1
-    if type(d2) == str:
-        dialect2 = CSV_DIALECTS[d2]
-    else:
-        dialect2 = d2
-    attributes = {}
-    for a in dir(dialect1):
-        if a[0] != '_':
-            attributes[a] = getattr(dialect2, a)
-    attributes = {
-        k: v for k, v in attributes.items() if not callable(v)}
-    for k, v in attributes.items():
-        if v != getattr(dialect2, k):
-            return False
-    return True
-
-
-@arglogger
-def test_csv(fname: str, dialect_arg=None):
-    """Test if a file object points to valid CSV file."""
-    logger_name = ':'.join(
-        (basename(__file__), __name__, sys._getframe().f_code.co_name))
-    logger = logging.getLogger(logger_name)
-    with open(fname, 'r') as f:
-        smpl = f.read(1024)
-    try:
-        dialect = csv.Sniffer().sniff(smpl)
-    except csv.Error as exc:
-        raise csv.Error(
-            'Dialect detection error on file {}.'
-            ''.format(fname)) from exc
-    else:
-        if dialect_arg is not None:
-            if not dialects_match(dialect_arg, dialect):
-                logger.warning(
-                    'Dialect argument ({}) and sniffer result ({}) do not '
-                    'match. Using dialect argument to read {}.'
-                    ''.format(dialect_arg, pformat(dialect), fname))
-            else:
-                logger.debug('Dialect arg and sniff match!')
-            return dialect_arg
-        else:
-            for k, v in CSV_DIALECTS.items():
-                logger.debug('trying dialect: {}'.format(k))
-                if dialects_match(dialect, v):
-                    logger.info(
-                        'CSV file {} has dialect "{}".'.format(fname, k))
-                    return k
-            raise IOError(
-                'CSV file "{}" does not conform to any of the standard '
-                'syntax dialects ({}). Test results: {}'
-                ''.format(
-                    fname,
-                    ', '.join(CSV_DIALECTS.keys()),
-                    pformat(dialect)))
 
 
 @arglogger
@@ -169,19 +85,30 @@ def main(args):
     logger_name = ':'.join(
         (basename(__file__), __name__, sys._getframe().f_code.co_name))
     logger = logging.getLogger(logger_name)
+    logger.debug('reading src')
     src = abspath(realpath(args.source))
-    dialect = test_file(src)
-    src_data = read_file(src, dialect)
-    try:
-        time_periods = abspath(realpath(args.timeperiods))
-    except TypeError:
-        time_periods = None
-    else:
-        dialect = test_file(time_periods)
-        time_periods = read_file(time_periods, dialect)
+    logger.debug('src: {}'.format(src))
+    dialect = test_file(src, encoding=args.encoding)
+    src_data, field_names = read_file(src, dialect, encoding=args.encoding)
+    logger.debug('reading time_periods')
+    time_periods = abspath(realpath(args.time_periods))
+    logger.debug('time_periods: {}'.format(time_periods))
+    dialect = test_file(time_periods, encoding=args.encoding)
+    tpp, field_names = read_file(time_periods, dialect, encoding=args.encoding)
+    time_periods = {}
+    for tp in tpp:
+        logger.debug('tp: {}'.format(repr(tp)))
+        term = tp['term']
+        nameid = tp['nameid']
+        try:
+            time_periods[nameid].append(term)
+        except KeyError:
+            time_periods[nameid] = [term]
+    logger.debug('time_periods: {}'.format(repr(time_periods)))
     dest = abspath(realpath(args.destination))
     names = []
     for item in src_data:
+        logger.debug(pformat(item))
         nameid = item['nameid']
         d = {k: v for k, v in item.items() if k != 'nameid'}
         logger.debug(pformat(d))
@@ -198,6 +125,12 @@ def main(args):
                 'data in nameid={} ({}). Details: {}'
                 ''.format(nameid, nameid, title, exc))
             continue
+        try:
+            periods = time_periods[nameid]
+        except KeyError:
+            logger.warning('No time periods defined for {}'.format(nameid))
+        else:
+            pn.time_periods = periods
         if args.romanize:
             try:
                 pn.generate_romanized()
@@ -227,7 +160,6 @@ def main(args):
                     ''.format(nameid, nameid, title, exc))
                 continue
         if args.abstract:
-            print('boom')
             pn.generate_summary()
         arguments = dir(pn)
         arguments = [a for a in arguments if a[0] != '_']
@@ -272,6 +204,10 @@ if __name__ == "__main__":
             'source',
             type=str,
             help='JSON file of data from massage-iip-places.py')
+        parser.add_argument(
+            'time_periods',
+            type=str,
+            help='filepath to which to write the JSON result')
         parser.add_argument(
             'destination',
             type=str,

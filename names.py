@@ -116,6 +116,7 @@ class PleiadesName:
         self.romanized = romanized
         self.slug = slug
         self.summary = summary
+        self.time_periods = time_periods
         self.transcription_accuracy = transcription_accuracy
         self.transcription_completeness = transcription_completeness
         if attested == '' and romanized == '':
@@ -465,17 +466,19 @@ class PleiadesName:
     @time_periods.setter
     def time_periods(self, periods: list):
         """Set the value of the object's "time_periods" attribute."""
+        self._time_periods = []
         for p in periods:
             q = self.__normalize_space(p)
+            logger_name = ':'.join(
+                    (__name__, inspect.currentframe().f_code.co_name))
+            logger = logging.getLogger(logger_name)
+            logger.debug('Adding time period "{}".'.format(q))
             try:
-                self.__valid_against_vocab('time-periods', q)
+                self.__valid_against_vocab('time_periods', q)
             except ValueError:
                 raise
             else:
-                try:
-                    self._time_periods.append(q)
-                except ValueError:
-                    self._time_periods = [q]
+                self._time_periods.append(q)
 
     # attribute: transcription_accuracy
     @property
