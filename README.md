@@ -14,7 +14,9 @@ This repository **does not** contain the actual script used to perform the batch
 
 ## Modules and Scripts in this Repository
 
-### convert.py
+
+
+
 
 ### csv_splitter.py
 
@@ -36,4 +38,12 @@ This repository **does not** contain the actual script used to perform the batch
 ## Todo
 
  - Refactor as a standard Python package, rather than a script pile.
+ - Write packaging script for massage-*.py script outputs.
+
+## Deprecated Stuff in This Module
+
+### convert.py
+
+An early attempt at converting CSV into JSON suitable for the Pleiades batch loading script. It is partly superseded by the massage-*.py family of scripts, but we will also need to write a packaging script that will take output from the massage-*.py scripts and turn them into the JSON that the batch upload script expects.
+
 
