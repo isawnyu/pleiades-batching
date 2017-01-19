@@ -14,11 +14,9 @@ This repository **does not** contain the actual script used to perform the batch
 
 ## Modules and Scripts in this Repository
 
-
-
-
-
 ### csv_splitter.py
+
+A script for splitting CSV field values containing comma-delimited lists.
 
 ### names.py
 

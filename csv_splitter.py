@@ -1,5 +1,5 @@
 """
-Python 3 script template (changeme)
+A script for splitting CSV field values containing comma-delimited lists.
 """
 
 from arglogger import arglogger
