@@ -52,6 +52,8 @@ Defines vocabularies used in pleiades-batching tools.
 
 ### csv_utilities.py
 
+Reusable code for working with CSV files.
+
 ### normalize_space.py
 
 ## Todo
