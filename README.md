@@ -36,14 +36,19 @@ Nosetests in tests/test_names.py.
 
 Script to validate and augment *Pleiades* names data for batch upload create.
 
-### vocab_getter.py
-
 ### Utility Modules
 
- - arglogger.py
- - vocabularies.py
- - csv_utilities.py
- - normalize_space.py
+### arglogger.py
+
+### vocab_getter.py
+
+Script to scrape HTML version of a Pleiades vocab page and save as plain text.s
+
+### vocabularies.py
+
+### csv_utilities.py
+
+### normalize_space.py
 
 ## Todo
 
