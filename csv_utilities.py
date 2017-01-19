@@ -1,6 +1,4 @@
-"""
-csv utilities
-"""
+"""Reusable code for working with CSV files."""
 
 import csv
 import logging
