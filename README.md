@@ -12,6 +12,14 @@ This repository **does not** contain the actual script used to perform the batch
 
 ## How?!
 
+## Versions, Formats, Encodings, and Other Gotchas
+
+This code is tested with Python 3.6.0, running on Apple OSX El Capitan (10.11.6). Python 2.x is **not supported**.
+
+Supported file formats include CSV and JSON (but see "todo" section, below). Unless a different encoding is specified, all scripts and functions in this package assume the text in such files is UTF-8-encoded without a BOM. That's a requirement for valid JSON, but an assumption for CSV. 
+
+Caveat utilitor: older versions of Microsoft Excel do not support any character encoding other than ASCII (thus irrevocably borking your placenames!), and recent versions' "Save as UTF-8 CSV" functionality silently adds a BOM. So, don't use old versions of Excel to prepare content for pleiades-batching, and be sure to pass "utf-8-sig" instead of "utf-8" as the encoding for scripts and functions defined herein.
+
 ## Modules and Scripts in this Repository
 
 NB: Usage for scripts can be displayed with the "-h" option, like:
