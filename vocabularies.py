@@ -1,3 +1,5 @@
+"""Defines vocabularies used in pleiades-batching tools."""
+
 VOCABULARIES = {
     'association_certainty': {
         'certain': 'All commentators are agreed that, in antiquity, a place was '
