@@ -20,6 +20,12 @@ A script for splitting CSV field values containing comma-delimited lists.
 
 ### names.py
 
+Construct and validate data for *Pleiades* name resources.
+
+Defines the class ```PleiadesName```, whose attributes and methods constitute the full capabilities of this module.
+
+Nosetests in tests/test_names.py. 
+
 ### massage-names.py
 
 ### pair_pids.py
