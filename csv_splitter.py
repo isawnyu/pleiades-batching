@@ -2,10 +2,10 @@
 Python 3 script template (changeme)
 """
 
+from arglogger import arglogger
 import argparse
 from copy import deepcopy
 from csv_utilities import test_csv, read_csv, write_csv
-from functools import wraps
 import inspect
 import logging
 from normalize_space import normalize_space
@@ -27,18 +27,6 @@ POSITIONAL_ARGUMENTS = [
     ['-e', '--encoding', 'utf-8', 'CSV file character encoding (utf-8)'],
     ['-s', '--streamline', False, 'skip empty rows']
 ]
-
-
-def arglogger(func):
-    """
-    decorator to log argument calls to functions
-    """
-    @wraps(func)
-    def inner(*args, **kwargs):
-        logger = logging.getLogger(func.__name__)
-        logger.debug("called with arguments: %s, %s" % (args, kwargs))
-        return func(*args, **kwargs)
-    return inner
 
 
 @arglogger
