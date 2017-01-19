@@ -1,5 +1,5 @@
 """
-Python 3 script template (changeme)
+Script to scrape HTML version of a Pleiades vocab page and save as plain text.
 """
 
 import argparse
