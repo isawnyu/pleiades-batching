@@ -12,6 +12,12 @@ This repository **does not** contain the actual script used to perform the batch
 
 ## How?!
 
+ 1. Prepare data in a series of CSV files in accordance with guidance herein (todo).
+ 2. Run appropriate "massage" scripts on the provided CSV files to validate their content and, where appropriate, to enhance it.
+ 3. Run packaging script (todo) on the output(s) of the "massage" scripts to get them ready for the "batch_update" script.
+ 4. Fire up a test instance of Pleiades and test-run the batch_update script with the new content.
+ 5. Run the new content through the batch update script on the production Pleiades site.
+
 ## Versions, Formats, Encodings, and Other Gotchas
 
 This code is tested with Python 3.6.0, running on Apple OSX El Capitan (10.11.6). Python 2.x is **not supported**.
