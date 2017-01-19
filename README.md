@@ -56,10 +56,13 @@ Reusable code for working with CSV files.
 
 ### normalize_space.py
 
+Function to normalize whitespace in a string.
+
 ## Todo
 
  - Refactor as a standard Python package, rather than a script pile.
  - Write packaging script for "massage" script outputs.
+ - Add JSON input support.
 
 ## Deprecated Stuff in This Module
 
