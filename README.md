@@ -48,6 +48,8 @@ Script to scrape HTML version of a Pleiades vocab page and save as plain text.
 
 ### vocabularies.py
 
+Defines vocabularies used in pleiades-batching tools.
+
 ### csv_utilities.py
 
 ### normalize_space.py
