@@ -1,11 +1,9 @@
+""" Decorator to log argument calls to functions """
 from functools import wraps
 import logging
 
 
 def arglogger(func):
-    """
-    decorator to log argument calls to functions
-    """
     @wraps(func)
     def inner(*args, **kwargs):
         logger = logging.getLogger(func.__name__)
