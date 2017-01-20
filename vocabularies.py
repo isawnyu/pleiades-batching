@@ -199,5 +199,8 @@ UNICODE_RANGES = {
     'latin_extended_a': (r'\u0100', r'\u017F'),
     'latin_extended_b': (r'\u0180', r'\u024F'),
     'latin_extended_additional': (r'\u1E00', r'\u1EFF'),
+    'ipa_extensions': (r'\u0250', r'\u02AF'),
+    'spacing_modifier_letters': (r'\u02B0', r'\u02FF'),
+    'latin_extended_c': (r'\u2C60', r'\u2C7F'),
     'combining_diacritical_marks': (r'\u0300', r'\u036F')
 }
