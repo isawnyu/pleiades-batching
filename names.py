@@ -32,8 +32,18 @@ logging.getLogger('polyglot.detect.base').setLevel('CRITICAL')
 RX_PID = re.compile('^\d+$')
 RX_SLUG = re.compile('^[a-z\-\d]+$')
 RX_ROMANIZED = r''
+allowed_ranges = [
+    'basic_latin',
+    'latin_1',
+    'latin_extended_a',
+    'latin_extended_b',
+    'latin_extended_additional',
+    'ipa_extensions',
+    'spacing_modifier_letters',
+    'latin_extended_c',
+    'combining_diacritical_marks']
 for k, v in UNICODE_RANGES.items():
-    if 'latin' in k or k == 'combining_diacritical_marks':
+    if k in allowed_ranges:
         RX_ROMANIZED += r'{}-{}'.format(*v)
 RX_ROMANIZED = re.compile('^[{}]*$'.format(RX_ROMANIZED))
 PLEIADES_BASE_URL = 'https://pleiades.stoa.org'
